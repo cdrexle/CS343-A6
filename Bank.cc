@@ -1,5 +1,5 @@
 #include <vector>
-#include "bank.h"
+#include "Bank.h"
 
 Bank::Bank( unsigned int numStudents ) : accounts(numStudents, 0) {}
  

@@ -1,5 +1,5 @@
-#ifndef __BANK_H__
-#define __BANK_H__
+#ifndef BANK_H
+#define BANK_H
 
 #include <vector>
 
