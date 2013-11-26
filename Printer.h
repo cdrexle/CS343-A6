@@ -17,11 +17,11 @@ _Monitor Printer {
     void print( Kind kind, unsigned int lid, char state, int value1, int value2 );
   private:
   	std::vector<std::string> buffer;
-  	unsigned int numStudents;
-  	unsigned int numVendingMachines;
-  	unsigned int numCouriers;
+  	unsigned int nStudents;
+  	unsigned int nVendingMachines;
+  	unsigned int nCouriers;
   	
-  	void print(unsigned int id, string val);
+  	void printPrimitive(unsigned int id, std::string val);
     
     void flushBuffer();
     unsigned int getId(Kind kind);

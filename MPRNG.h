@@ -1,6 +1,6 @@
 //                              -*- Mode: C++ -*-
-#ifndef __MPRNG_H__
-#define __MPRNG_H__
+#ifndef MPRNG_H
+#define MPRNG_H
 
 _Monitor MPRNG {
   public:

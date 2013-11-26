@@ -1,6 +1,10 @@
 #ifndef TRUCK_H
 #define TRUCK_H
 
+_Monitor Printer;
+_Task NameServer;
+_Task BottlingPlant;
+
 _Task Truck {
     void main();
   public:

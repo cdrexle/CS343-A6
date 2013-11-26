@@ -14,6 +14,14 @@ string toString(unsigned int num) {
 	return w;
 }
 
+string stateToString(char val) {
+	stringstream s;
+	s << val;
+	string w;
+	s >> w;
+	return w;
+}
+
 unsigned int Printer::getId(Printer::Kind kind) {
 	switch(kind) {
 		case Printer::Parent:
@@ -34,16 +42,16 @@ unsigned int Printer::getId(Printer::Kind kind, unsigned int id) {
 		case Printer::Student:
 			return 5+id;
 		case Printer::Vending:
-			return 5+numStudents+id;
+			return 5+nStudents+id;
 		case Printer::Courier:
-			return 5+numStudents+numVendingMachines+id;
+			return 5+nStudents+nVendingMachines+id;
 	}
 }
 
 Printer::Printer( unsigned int numStudents, unsigned int numVendingMachines, unsigned int numCouriers ) : 
-	numStudents(numStudents),
-	numVendingMachines(numVendingMachines),
-	numCouriers(numCouriers),
+	nStudents(numStudents),
+	nVendingMachines(numVendingMachines),
+	nCouriers(numCouriers),
 	buffer(5+numStudents+numVendingMachines+numCouriers)
 {
 	cout << "Parent" << "\t";
@@ -90,7 +98,7 @@ void Printer::flushBuffer() {
 	cout << endl;
 }
 
-void Printer::print(unsigned int id, string val) {
+void Printer::printPrimitive(unsigned int id, string val) {
 	if (val != "F") {
 		if (buffer[id] != "") flushBuffer();
 		buffer[id] = val;
@@ -105,32 +113,32 @@ void Printer::print(unsigned int id, string val) {
 	}
 }
 
-void print( Printer::Kind kind, char state ) {
+void Printer::print( Printer::Kind kind, char state ) {
 	unsigned int id = getId(kind);
-	print(id, state);
+	printPrimitive(id, stateToString(state));
 }
 
-void print( Kind kind, char state, int value1 ) {
+void Printer::print( Kind kind, char state, int value1 ) {
 	unsigned int id = getId(kind);
-	print(id, state+toString(value1));
+	printPrimitive(id, stateToString(state)+toString(value1));
 }
 
-void print( Kind kind, char state, int value1, int value2 ) {
+void Printer::print( Kind kind, char state, int value1, int value2 ) {
 	unsigned int id = getId(kind);
-	print(id, state+toString(value1)+","+toString(value2));
+	printPrimitive(id, stateToString(state)+toString(value1)+","+toString(value2));
 }
 
-void print( Kind kind, unsigned int lid, char state ) {
+void Printer::print( Kind kind, unsigned int lid, char state ) {
 	unsigned int id = getId(kind, lid);
-	print(id, state);
+	printPrimitive(id, stateToString(state));
 }
 
-void print( Kind kind, unsigned int lid, char state, int value1 ) {
+void Printer::print( Kind kind, unsigned int lid, char state, int value1 ) {
 	unsigned int id = getId(kind, lid);
-	print(id, state+toString(value1));
+	printPrimitive(id, stateToString(state)+toString(value1));
 }
 
-void print( Kind kind, unsigned int lid, char state, int value1, int value2 ) {
+void Printer::print( Kind kind, unsigned int lid, char state, int value1, int value2 ) {
 	unsigned int id = getId(kind, lid);
-	print(id, state+toString(value1)+","+toString(value2));
+	printPrimitive(id, stateToString(state)+toString(value1)+","+toString(value2));
 }

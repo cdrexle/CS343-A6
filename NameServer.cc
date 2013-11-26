@@ -1,4 +1,6 @@
 #include "NameServer.h"
+#include "Printer.h"
+#include "VendingMachine.h"
 
 void NameServer::main()
 {

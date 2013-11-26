@@ -1,4 +1,7 @@
 #include "Truck.h"
+#include "Printer.h"
+#include "NameServer.h"
+#include "BottlingPlant.h"
 void Truck::main()
 {
 

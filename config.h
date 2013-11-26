@@ -1,5 +1,5 @@
-#ifndef __CONFIG_H__
-#define __CONFIG_H__
+#ifndef CONFIG_H
+#define CONFIG_H
 
 struct ConfigParms {
     unsigned int sodaCost;                 // MSRP per bottle

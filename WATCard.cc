@@ -1,3 +1,5 @@
+#include "WATCard.h"
+
 WATCard::WATCard( const WATCard & )
 {
 

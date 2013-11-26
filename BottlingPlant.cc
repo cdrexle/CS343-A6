@@ -1,4 +1,7 @@
 #include "BottlingPlant.h"
+#include "Printer.h"
+#include "NameServer.h"
+
 void BottlingPlant::main()
 {
 

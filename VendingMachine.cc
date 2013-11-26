@@ -1,4 +1,6 @@
 #include "VendingMachine.h"
+#include "Printer.h"
+#include "NameServer.h"
 
 void VendingMachine::main()
 {
@@ -9,7 +11,7 @@ VendingMachine::VendingMachine( Printer &prt, NameServer &nameServer, unsigned i
 {
 
 }
-Status VendingMachine::buy( Flavours flavour, WATCard &card )
+VendingMachine::Status VendingMachine::buy( Flavours flavour, WATCard &card )
 {
 
 }

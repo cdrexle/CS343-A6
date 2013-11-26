@@ -1,6 +1,9 @@
 #ifndef NAMESERVER_H
 #define NAMESERVER_H
 
+_Monitor Printer;
+_Task VendingMachine;
+
 _Task NameServer {
     void main();
   public:

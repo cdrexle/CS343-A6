@@ -1,3 +1,7 @@
+#include "Parent.h"
+#include "Printer.h"
+#include "Bank.h"
+
 void Parent::main()
 {
 

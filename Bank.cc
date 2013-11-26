@@ -3,11 +3,11 @@
 
 Bank::Bank( unsigned int numStudents ) : accounts(numStudents, 0) {}
  
-void deposit( unsigned int id, unsigned int amount ) {
+void Bank::deposit( unsigned int id, unsigned int amount ) {
 	accounts[id] += amount;
 }
 
-void withdraw( unsigned int id, unsigned int amount ) {
-	if (accounts[i] - amount <= 0) accounts[id] = 0;
+void Bank::withdraw( unsigned int id, unsigned int amount ) {
+	if (accounts[id] - amount <= 0) accounts[id] = 0;
 	else accounts[id] -= amount;
 }
