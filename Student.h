@@ -5,9 +5,6 @@ _Monitor Printer;
 _Task NameServer;
 _Task WATCardOffice;
 
-#include "VendingMachine.h"
-#include "MPRNG.h"
-
 _Task Student {
     void main();
     unsigned int Id;

@@ -2,6 +2,10 @@
 #include "Printer.h"
 #include "NameServer.h"
 #include "WATCardOffice.h"
+#include "VendingMachine.h"
+#include "MPRNG.h"
+
+extern MPRNG mprng;
 
 void Student::main()
 {
