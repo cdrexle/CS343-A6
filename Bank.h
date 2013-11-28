@@ -10,6 +10,7 @@ _Monitor Bank {
     void withdraw( unsigned int id, unsigned int amount );
   private:
   	std::vector<unsigned int> accounts;
+  	uCondition insufficientFunds;
 };
 
 #endif
