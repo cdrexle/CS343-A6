@@ -20,21 +20,19 @@ void Student::main()
 		WATCard::FWATCard newWATCard = office->create(Id, 5);
 		//Get vending machine
 		VendingMachine *tempVendingMachine = server->getMachine(Id);
-		yield(mprng(9) + 1);
 		int purchaseStatus = -1;
 		while(purchaseStatus != VendingMachine::BUY)
 		{
+			yield(mprng(9) + 1);
 			//Attempt to purchase soda
-			int purchaseStatus = tempVendingMachine->buy((VendingMachine::Flavours)favoriteFlavour, *newWATCard);
-			
+			purchaseStatus = tempVendingMachine->buy((VendingMachine::Flavours)favoriteFlavour, *newWATCard());		
 			//If the WAT card has insufficient funds, call transfer funds
 			if(purchaseStatus == VendingMachine::FUNDS)
 			{
-				//Try and catch the Lost exception during the transfer
-				//TODO: Figure out how to properly use Lost 
+				//Try and catch the Lost exception during the transfer 
 				try
 				{
-					office->transfer(Id, tempVendingMachine->cost() + 5, newWATCard);
+					office->transfer(Id, tempVendingMachine->cost() + 5, newWATCard());
 				}
 				//If the WATCard is lost during transfer, create a new one
 				catch(WATCardOffice::Lost &lost)
@@ -48,6 +46,8 @@ void Student::main()
 				tempVendingMachine = server->getMachine(Id);
 			}
 		}
+		//If the soda is bought successfully, increment the counter
+		currentNumPurchase++;
 	}
 }
 

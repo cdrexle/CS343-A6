@@ -4,6 +4,7 @@
 #include <uFuture.h>
 
 class WATCard {
+  //TODO: What does this constructor do?
     WATCard( const WATCard & );            // prevent copying
     WATCard &operator=( const WATCard & );
   public:
