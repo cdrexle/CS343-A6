@@ -24,39 +24,29 @@ WATCard::FWATCard WATCardOffice::create( unsigned int sid, unsigned int amount )
 	//Create the Args object the specifies the details of the job
 	Args newAgrs;
 	newAgrs.studentId = sid;
-	newAgrs.originalAmount = 0;
 	newAgrs.addAmount = amount;
-
-	//Create a new future WAT card
-	WATCard::FWATCard newCard;
+	NewAgrs.watcard = new WATCard();
 
 	//Create a new job
 	Job *newJob = new Job(newAgrs);
-	newJob->result = newCard;
 
 	//Insert the job into the list of jobs and signal a courier that is waiting for jobs
 	jobList.push_back(newJob);
 	jobQueue.signal();
 
 	//Return the future to the student
-	return newCard;
+	return newJob->result;
 }
 WATCard::FWATCard WATCardOffice::transfer( unsigned int sid, unsigned int amount, WATCard *card )
 {
 	//Create the Args object the specifies the details of the job
 	Args newAgrs;
 	newAgrs.studentId = sid;
-	newAgrs.originalAmount = card->getBalance();
 	newAgrs.addAmount = amount;
-
-	//TODO: does this make sense???
-	delete card;
-	//Create a new future WAT card
-	WATCard::FWATCard newCard;
+	newAgrs.watcard = card;
 
 	//Create a new job
 	Job *newJob = new Job(newAgrs);
-	newJob->result = newCard;
 
 	//Insert the job into the list of jobs and signal a courier that is waiting for jobs
 	jobList.push_back(newJob);

@@ -9,8 +9,8 @@ _Monitor Bank;
 _Task WATCardOffice {
 	struct Args {
         int studentId;
-        int originalAmount;
         int addAmount;
+        WATCard* watcard;
     };
     struct Job {                           // marshalled arguments and return future
         Args args;                         // call arguments (YOU DEFINE "Args")
