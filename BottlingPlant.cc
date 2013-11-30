@@ -8,6 +8,7 @@ extern MPRNG mprng;
 
 void BottlingPlant::main()
 {
+	prod = new unsigned int[4];
 	Truck* truck = new Truck(*prt, *nameServer, *this, numVendingMachines, maxStockPerFlavour);
 	while(true) {
 		// Production run
@@ -34,12 +35,7 @@ BottlingPlant::BottlingPlant( Printer &prt, NameServer &nameServer, unsigned int
 	maxStockPerFlavour(maxStockPerFlavour),
 	timeBetweenShipments(timeBetweenShipments),
 	closingDown(false)
-{
-	prod = new unsigned int[4];
-	for (unsigned int i = 0; i < 4; i++) {
-		prod[i] = 0;
-	}
-}
+{}
 
 BottlingPlant::~BottlingPlant() {
 	delete[] prod;

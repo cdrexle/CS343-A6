@@ -9,6 +9,7 @@ extern MPRNG mprng;
 
 void Truck::main()
 {
+	cargo = new unsigned int[4];
 	VendingMachine** machineList = nameServer->getMachineList();
 	while(true) {
 		yield(mprng(9) + 1); // get coffee
@@ -34,12 +35,7 @@ Truck::Truck( Printer &prt, NameServer &nameServer, BottlingPlant &plant,
 	plant(&plant),
 	numVendingMachines(numVendingMachines),
 	maxStockPerFlavour(maxStockPerFlavour)
-{
-	cargo = new unsigned int[4];
-	for (unsigned int i = 0; i < 4; i++) {
-		cargo[i] = 0;
-	}
-}
+{}
 
 Truck::~Truck() {
 	delete[] cargo;
