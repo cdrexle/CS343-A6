@@ -19,8 +19,8 @@ void BottlingPlant::main()
 			closingDown = true;
 			_Accept(getShipment) {}
 			delete truck;
-		} or
-		_Accept(getShipment) {}
+		}
+		or _Accept(getShipment) {}
 	}
 }
 
