@@ -10,20 +10,26 @@ _Task WATCardOffice {
 	struct Args {
         int studentId;
         int addAmount;
-        WATCard* watcard;
+        WATCard* watCard;
     };
     struct Job {                           // marshalled arguments and return future
-        Args args;                         // call arguments (YOU DEFINE "Args")
+        Args args;                         
         WATCard::FWATCard result;                   // return future
         Job( Args args ) : args( args ) {}
     };
     Printer *printer;
     Bank *bankPtr;
     int courierNum;                     //Total number of couriers
+    int newJobSid;
+    int newJobAddAmount;
+    Job *newJob;
+    WATCard *newJobWATCard;
     _Task Courier {
+            Bank *bankPtr;
+            WATCardOffice *officePtr;
             void main();
         public:
-            Courier();
+            Courier(WATCardOffice &watCardOffice, Bank &bank);
 
     };                 // communicates with bank
     std::vector <Courier *> courierList;    //List of couriers

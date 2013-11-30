@@ -16,8 +16,20 @@ void Student::main()
 	int purchaseNum = mprng(numPurchase - 1) + 1;
 	while(currentNumPurchase < purchaseNum)
 	{
-		//Create WAT card
-		WATCard::FWATCard newWATCard = office->create(Id, 5);
+		bool newCardCreated = false;
+		while(!newCardCreated)
+		{
+			//Create WAT card
+			try
+			{
+				newCardCreated = true;
+				WATCard::FWATCard newWATCard = office->create(Id, 5);
+			}
+			catch(WATCardOffice::Lost &lost)
+			{
+				newCardCreated = false;
+			}
+		}
 		//Get vending machine
 		VendingMachine *tempVendingMachine = server->getMachine(Id);
 		int purchaseStatus = -1;
@@ -37,7 +49,21 @@ void Student::main()
 				//If the WATCard is lost during transfer, create a new one
 				catch(WATCardOffice::Lost &lost)
 				{
-					newWATCard = office->create(Id, 5);
+					newCardCreated = false;
+					//Need to take into account that the newly created card can still be lost
+					while(!newCardCreated)
+					{
+						//Create WAT card
+						try
+						{
+							newCardCreated = true;
+							WATCard::FWATCard newWATCard = office->create(Id, 5);
+						}
+						catch(WATCardOffice::Lost &lost)
+						{
+							newCardCreated = false;
+						}
+					}
 				}
 			}
 			//If the current vending machine is out of stock, go to the next machine
