@@ -13,7 +13,7 @@ void WATCardOffice::main()
 		_Accept(~WATCardOffice)
 		{
 		}
-		_Accept(create)
+		or _Accept(create)
 		{
 			//Create the Args object the specifies the details of the job
 			Args newAgrs;
@@ -28,7 +28,7 @@ void WATCardOffice::main()
 			jobQueue.signal();
 
 		}
-		_Accept(transfer)
+		or _Accept(transfer)
 		{
 			//Create the Args object the specifies the details of the job
 			Args newAgrs;
@@ -44,7 +44,7 @@ void WATCardOffice::main()
 			jobQueue.signal();
 		}
 
-		_Accept(requestWork)
+		or _Accept(requestWork)
 		{
 		}
 	}

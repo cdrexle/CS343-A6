@@ -16,6 +16,7 @@ void Student::main()
 	int purchaseNum = mprng(numPurchase - 1) + 1;
 	while(currentNumPurchase < purchaseNum)
 	{
+		WATCard::FWATCard newWATCard;
 		bool newCardCreated = false;
 		while(!newCardCreated)
 		{
@@ -23,7 +24,7 @@ void Student::main()
 			try
 			{
 				newCardCreated = true;
-				WATCard::FWATCard newWATCard = office->create(Id, 5);
+				newWATCard = office->create(Id, 5);
 			}
 			catch(WATCardOffice::Lost &lost)
 			{
