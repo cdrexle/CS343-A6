@@ -12,10 +12,6 @@ void Truck::main()
 	VendingMachine** machineList = nameServer->getMachineList();
 	while(true) {
 		yield(mprng(9) + 1); // get coffee
-		// Clear old cargo
-		for (unsigned int i = 0; i < 4; i++) {
-			cargo[i] = 0;
-		}
 		bool closingDown = plant->getShipment(cargo);
 		if (closingDown) break;
 		for (unsigned int i = 0; i < numVendingMachines; i++) {
