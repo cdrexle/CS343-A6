@@ -10,12 +10,13 @@
 #include "Student.h"
 #include <iostream>
 #include <vector>
+#include <string>
 
 using namespace std;
 
 void uMain::main()
 {
-	char *configName = "soda.config";
+	string configName = "soda.config";
 	int seed = getpid();
 	if(argc >= 2)
 	{
@@ -32,7 +33,7 @@ void uMain::main()
 	}
 	mprng.seed(seed);
 	ConfigParms configParms;
-	processConfigFile(configName, configParms);
+	processConfigFile(configName.c_str(), configParms);
 	//Initialize all the necessary classes
 	
 	Printer *printer = new Printer(configParms.numStudents, configParms.numVendingMachines, configParms.numCouriers);
@@ -43,7 +44,7 @@ void uMain::main()
 	
 	vector <VendingMachine *>machineList;
 	
-	for(int i = 0; i < configParms.numVendingMachines; i++)
+	for(unsigned int i = 0; i < configParms.numVendingMachines; i++)
 	{
 		VendingMachine *vendingMachine = new VendingMachine(*printer, *nameServer, i, configParms.sodaCost, configParms.maxStockPerFlavour);
 		machineList.push_back(vendingMachine); 
@@ -54,19 +55,19 @@ void uMain::main()
 														configParms.timeBetweenShipments);
 	vector <Student *> studentList;
 	
-	for(int i = 0; i < configParms.numStudents; i++)
+	for(unsigned int i = 0; i < configParms.numStudents; i++)
 	{
 		Student *student = new Student(*printer, *nameServer, *watCardOffice, i, configParms.maxPurchases);
 		studentList.push_back(student);
 	}
 
-	for(int i = 0; i < studentList.size(); i++)
+	for(unsigned int i = 0; i < studentList.size(); i++)
 	{
 		Student *temp = studentList[i];
 		delete temp;
 	}
 	delete bottlingPlant;
-	for(int i = 0; i < machineList.size(); i++)
+	for(unsigned int i = 0; i < machineList.size(); i++)
 	{
 		VendingMachine *temp = machineList[i];
 		delete temp;

@@ -17,7 +17,7 @@ void Student::main()
 	int purchaseNum = mprng(numPurchase - 1) + 1;
 	printer->print(Printer::Student, Id, 'S', favoriteFlavour, purchaseNum);
 	WATCard::FWATCard newWATCard;
-	bool newCardCreated = false;
+	//bool newCardCreated = false;
 	//Create WAT card		
 	newWATCard = office->create(Id, 5);
 

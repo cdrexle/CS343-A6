@@ -34,11 +34,21 @@ unsigned int Printer::getId(Printer::Kind kind) {
 			return 3;
 		case Printer::BottlingPlant:
 			return 4;
+		case Printer::Student:
+		case Printer::Vending:
+		case Printer::Courier:
+			break;
 	}
 }
 
 unsigned int Printer::getId(Printer::Kind kind, unsigned int id) {
 	switch(kind) {
+		case Printer::Parent:
+		case Printer::WATCardOffice:
+		case Printer::NameServer:
+		case Printer::Truck:
+		case Printer::BottlingPlant:
+			break;
 		case Printer::Student:
 			return 5+id;
 		case Printer::Vending:
@@ -49,10 +59,10 @@ unsigned int Printer::getId(Printer::Kind kind, unsigned int id) {
 }
 
 Printer::Printer( unsigned int numStudents, unsigned int numVendingMachines, unsigned int numCouriers ) : 
+	buffer(5+numStudents+numVendingMachines+numCouriers, ""),
 	nStudents(numStudents),
 	nVendingMachines(numVendingMachines),
-	nCouriers(numCouriers),
-	buffer(5+numStudents+numVendingMachines+numCouriers)
+	nCouriers(numCouriers)
 {
 	cout << "Parent" << "\t";
 	cout << "WATOff" << "\t";

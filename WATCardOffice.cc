@@ -10,6 +10,12 @@ extern MPRNG mprng;
 void WATCardOffice::main()
 {
 	printer->print(Printer::WATCardOffice, 'S');
+	//Initialize couriers
+	for(int i = 0; i < courierNum; i++)
+	{
+		WATCardOffice::Courier *courier = new Courier(i, *this, *bankPtr, *printer);
+		courierList.push_back(courier);
+	}
 	while(true)
 	{
 		_Accept(~WATCardOffice)
@@ -57,12 +63,6 @@ WATCardOffice::WATCardOffice( Printer &prt, Bank &bank, unsigned int numCouriers
 	courierNum = numCouriers;
 	printer = &prt;
 	bankPtr = &bank;
-	//Initialize couriers
-	for(int i = 0; i < numCouriers; i++)
-	{
-		WATCardOffice::Courier *courier = new Courier(i, *this, bank, prt);
-		courierList.push_back(courier);
-	}
 }
 WATCard::FWATCard WATCardOffice::create( unsigned int sid, unsigned int amount )
 {
@@ -126,7 +126,7 @@ WATCardOffice::~WATCardOffice()
 		WATCardOffice::Courier *temp = courierList[i];
 		delete temp;
 	}
-	for(int i = 0; i < jobList.size(); i++)
+	for(unsigned int i = 0; i < jobList.size(); i++)
 	{
 		Job *temp = jobList[i];
 		delete temp;
