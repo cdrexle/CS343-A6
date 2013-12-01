@@ -164,7 +164,7 @@ void WATCardOffice::Courier::main()
 		newJob->args.watCard->deposit(newJob->args.addAmount);
 
 		//In case where courier loses the WATCard
-		if(mprng()%2 == 0)
+		if(mprng()%6 == 0)
 		{
 			
 			newJob->result.exception(new WATCardOffice::Lost);
