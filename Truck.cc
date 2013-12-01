@@ -26,15 +26,23 @@ void Truck::main()
 
 		for (unsigned int i = 0; i < numVendingMachines; i++) {
 
-			prt->print(Printer::Truck, 'd', i, totalSoda);
+			prt->print(Printer::Truck, 'd', machineList[i]->getId(), totalSoda);
 
 			unsigned int* inventory = machineList[i]->inventory();
+			unsigned int amountNotFilled = 0;
 			for (unsigned int j = 0; j < 4; j++) {
 				unsigned int amountToStock = maxStockPerFlavour - inventory[j];
-				if (amountToStock > cargo[j]) amountToStock = cargo[j];
+				if (amountToStock > cargo[j]) {
+					amountNotFilled += (amountToStock - cargo[j]);
+					amountToStock = cargo[j];
+				}
 				cargo[j] -= amountToStock;
 				inventory[j] += amountToStock;
+				totalSoda -= amountToStock;
 			}
+			if (amountNotFilled > 0) prt->print(Printer::Truck, 'U', machineList[i]->getId(), amountNotFilled);
+			prt->print(Printer::Truck, 'D', machineList[i]->getId(), totalSoda);
+			
 			machineList[i]->restocked();
 		}
 	}
