@@ -19,12 +19,10 @@ void Student::main()
 	newWATCard = office->create(Id, 5);
 	//Go to the assigned vending machine
 	VendingMachine *tempVendingMachine = server->getMachine(Id);
-	
+	printer->print(Printer::Student, Id, 'V', tempVendingMachine->getId());
 	//Loop until the student has bought the number of sodas required
 	while(currentNumPurchase < purchaseNum)
 	{
-		//Get vending machine
-		printer->print(Printer::Student, Id, 'V', tempVendingMachine->getId());
 		int purchaseStatus = -1;
 
 		//Attempt to buy until a purchase is successful
@@ -74,6 +72,7 @@ void Student::main()
 			if(purchaseStatus == VendingMachine::STOCK)
 			{
 				tempVendingMachine = server->getMachine(Id);
+				printer->print(Printer::Student, Id, 'V', tempVendingMachine->getId());
 			}
 		}
 		printer->print(Printer::Student, Id, 'B', newWATCard()->getBalance());
