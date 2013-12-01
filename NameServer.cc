@@ -23,7 +23,10 @@ void NameServer::main()
 		or _When(numMachinesRegistered < numVendingMachines) _Accept(VMregister) {
 			numMachinesRegistered++;
 		}
-		or _When (numMachinesRegistered == numVendingMachines) _Accept(getMachine, getMachineList) {}
+		or _When (numMachinesRegistered == numVendingMachines) _Accept(getMachine) {
+			studentVendingMachines[studentIdToUpdate] = (studentVendingMachines[studentIdToUpdate] + 1) % numVendingMachines;
+		}
+		or _When (numMachinesRegistered == numVendingMachines) _Accept(getMachineList) {}
 	}
 	prt->print(Printer::NameServer, 'F');
 }
@@ -50,7 +53,7 @@ VendingMachine *NameServer::getMachine( unsigned int id )
 {
 
 	unsigned int vid = studentVendingMachines[id];
-	studentVendingMachines[id] = (studentVendingMachines[id] + 1) % numVendingMachines;
+	studentIdToUpdate = id;
 
 	prt->print(Printer::NameServer, 'N', id, vid);
 

@@ -21,6 +21,7 @@ _Task NameServer {
   	VendingMachine** vendingMachineList;
   	unsigned int numMachinesRegistered;
   	std::vector<unsigned int> studentVendingMachines;
+  	unsigned int studentIdToUpdate;
 };
 
 #endif
