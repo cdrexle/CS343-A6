@@ -17,16 +17,12 @@ void Student::main()
 	int purchaseNum = mprng(numPurchase - 1) + 1;
 	printer->print(Printer::Student, Id, 'S', favoriteFlavour, purchaseNum);
 	WATCard::FWATCard newWATCard;
-	//bool newCardCreated = false;
 	//Create WAT card		
 	newWATCard = office->create(Id, 5);
-
-
+	VendingMachine *tempVendingMachine = server->getMachine(Id);
 	while(currentNumPurchase < purchaseNum)
 	{
 		//Get vending machine
-		VendingMachine *tempVendingMachine = server->getMachine(Id);
-
 		printer->print(Printer::Student, Id, 'V', tempVendingMachine->getId());
 		int purchaseStatus = -1;
 		while(purchaseStatus != VendingMachine::BUY)
@@ -36,11 +32,11 @@ void Student::main()
 			while(lostCard)
 			{
 				lostCard = false;
+				//Use getBalance to explicit check whether the card was lost when creating it
 				try
 				{
-					//Attempt to purchase soda
-					purchaseStatus = tempVendingMachine->buy((VendingMachine::Flavours)favoriteFlavour, *newWATCard());		
-				}
+					newWATCard()->getBalance();
+				} 
 				catch(WATCardOffice::Lost &lost)
 				{
 					lostCard = true;
@@ -48,26 +44,25 @@ void Student::main()
 					newWATCard = office->create(Id, 5);
 				}
 			}
+
+			//Attempt to purchase soda
+			purchaseStatus = tempVendingMachine->buy((VendingMachine::Flavours)favoriteFlavour, *newWATCard());		
+
 			//If the WAT card has insufficient funds, call transfer funds
 			if(purchaseStatus == VendingMachine::FUNDS)
 			{
-				lostCard = true;
-				while(lostCard)
+				//Try and catch the Lost exception during the transfer 
+				try
 				{
-					lostCard = false;
-					//Try and catch the Lost exception during the transfer 
-					try
-					{
-						office->transfer(Id, tempVendingMachine->cost() + 5, newWATCard());
-					}
-					//If the WATCard is lost during transfer, create a new one
-					catch(WATCardOffice::Lost &lost)
-					{
-						lostCard = true;
-						printer->print(Printer::Student, Id, 'L');
-						newWATCard = office->create(Id, 5);
-					}
+					newWATCard = office->transfer(Id, tempVendingMachine->cost() + 5, newWATCard());
 				}
+				//If the WATCard is lost during transfer, create a new one
+				catch(WATCardOffice::Lost &lost)
+				{
+
+					printer->print(Printer::Student, Id, 'L');
+					newWATCard = office->create(Id, 5);
+				}	
 			}
 			//If the current vending machine is out of stock, go to the next machine
 			if(purchaseStatus == VendingMachine::STOCK)

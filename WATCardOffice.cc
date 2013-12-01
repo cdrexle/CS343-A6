@@ -148,41 +148,36 @@ void WATCardOffice::Courier::main()
 	printer -> print(Printer::Courier, id, 'S');
 	while(true)
 	{
-		_Accept(WATCardOffice::~Courier)
+		//Requests a new job
+		Job *newJob = officePtr->requestWork();
+		if(newJob->args.closing)
 		{
+			delete newJob;
 			break;
 		}
-		_Else
+		printer->print(Printer::Courier, id, 't', newJob->args.studentId, newJob->args.addAmount);
+
+		//Once a new job is received, call withdraw from the bank
+		bankPtr -> withdraw(newJob->args.studentId, newJob->args.addAmount);
+
+		//Update the watcard
+		newJob->args.watCard->deposit(newJob->args.addAmount);
+
+		//In case where courier loses the WATCard
+		if(mprng()%2 == 0)
 		{
-			//Requests a new job
-			Job *newJob = officePtr->requestWork();
-			if(newJob->args.closing)
-			{
-				delete newJob;
-				break;
-			}
-			printer->print(Printer::Courier, id, 't', newJob->args.studentId, newJob->args.addAmount);
-
-			//Once a new job is received, call withdraw from the bank
-			bankPtr -> withdraw(newJob->args.studentId, newJob->args.addAmount);
-
-			//Update the watcard
-			newJob->args.watCard->deposit(newJob->args.addAmount);
-
-			//In case where courier loses the WATCard
-			if(mprng()%2 == 0)
-			{
-				//delete newJob->args.watCard;
-				newJob->result.exception(new WATCardOffice::Lost);
-			}
-			//In case where the courier doesn't lose the WATCard
-			else
-			{
-				newJob->result.delivery(newJob->args.watCard);
-			}
-			printer->print(Printer::Courier, id, 'T', newJob->args.studentId, newJob->args.addAmount);
-			delete newJob;
+			
+			newJob->result.exception(new WATCardOffice::Lost);
+			delete newJob->args.watCard;
 		}
+		//In case where the courier doesn't lose the WATCard
+		else
+		{
+			newJob->result.delivery(newJob->args.watCard);
+		}
+		printer->print(Printer::Courier, id, 'T', newJob->args.studentId, newJob->args.addAmount);
+		delete newJob;
 	}
+
 	printer->print(Printer::Courier, id, 'F');
 } 
