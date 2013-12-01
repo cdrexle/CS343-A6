@@ -20,13 +20,13 @@ D4,3	W		P10	P													t4,5
 			d2,0															
 			U2,20															
 D0,3			D2,0								R	r						
-			P12	P								R	T0,5					
+	C0,5		P12	P	L							R	T0,5					
 			d0,12															
 			U0,3															
-D0,2	C0,5		D0,5	G9	L					r								
+D0,2	W		D0,5	G9						r			t0,5					
 			d1,5															
 			U1,15															
-	W		D1,0							R	r		t0,5					
+			D1,0							R	r							
 			d2,0															
 			U2,20															
 D1,2			D2,0								R	r						
@@ -56,1982 +56,977 @@ D4,3	T1,105		D2,0								R	r
 			U1,1															
 D1,3			D1,4							R	r						T4,5	
 			d2,4															
-			U2,11															
-	T4,105		D2,0								R	r						
-D4,1	W											R					t4,105	
-D0,3			P7	P														
+			U2,11								R	r						
+D4,1	T4,105		D2,0									R						
+D0,3	W		P7	P													t4,105	
 			d0,7															
-			D0,7	G13						r			T0,5					
+D3,2			D0,7	G13						r			T0,5					
 			d1,7															
 			U1,1															
-D3,2			D1,7							R	r							
+			D1,7							R	r							
 			d2,7															
 			U2,7															
-	T0,105		D2,3								R	r						
-D0,1	W											R	t0,105					
-D1,3			P13	P														
+D0,1	T0,105		D2,3								R	r						
+D1,3	W		P13	P								R	t0,105					
 			d0,13															
 			D0,13	G8						r								
 			d1,13															
-			D1,12							R	r							
+D2,2			D1,12							R	r							
 			d2,12															
 			U2,4															
-D2,2			D2,9								R	r						
+			D2,9								R	r						
 			P8	P								R						
 			d0,8															
-			D0,8	G9						r								
+D2,2			D0,8	G9						r								
 			d1,8															
-D2,2			D1,8							R	r							
+			D1,8							R	r				T2,5			
 			d2,8															
 			U2,4															
-			D2,8								R	r			T2,5			
-D2,3			P9	P								R						
+D2,3			D2,8								R	r						
+	T2,105		P9	P								R						
 			d0,9															
-	T2,105		D0,9	G12						r								
+	W		D0,9	G12						r					t2,105			
 			d1,9															
-	W		D1,9							R	r				t2,105			
+D4,1			D1,9							R	r							
 			d2,9															
 			U2,4															
-D4,1			D2,9								R	r						
+			D2,9								R	r						
 D2,3												R						
 D3,3			P12	P														
 			d0,12															
-			D0,12	G8						r						T3,5		
+			D0,12	G7						r						T3,5		
 			d1,12															
 D1,2			D1,12							R	r							
 			d2,12															
 			U2,4															
 	T3,105		D2,12								R	r						
 D4,3	W											R				t3,105		
-D2,2			P8	P														
-			d0,8															
-			D0,8	G5						r								
-			d1,8															
-			D1,8							R	r							
-			d2,8															
-			U2,4															
-D3,2			D2,8								R	r						
+D2,2			P7	P														
+			d0,7															
+			D0,7	G5						r								
+			d1,7															
+D3,2			D1,7							R	r							
+			d2,7															
+			U2,1															
+			D2,4								R	r						
 D0,1			P5	P								R						
 			d0,5															
-D2,1			D0,5	G12						r								
+D2,1			D0,5	G15						r								
 			d1,5															
 			D1,5							R	r							
 			d2,5															
-			U2,3															
-D1,2			D2,4								R	r						
-			P12	P								R						
-			d0,12															
-			D0,12	G13						r								
-			d1,12															
-			D1,12							R	r							
-			d2,12															
-D3,3			D2,9								R	r						
-			P13	P								R						
-			d0,13															
-			D0,13	G4						r								
-			d1,13															
-D1,2			D1,13							R	r							
-			d2,13															
-			D2,13								R	r						
-D4,2			P4	P								R						
-			d0,4															
-			D0,4	G9						r								
-			d1,4															
-			D1,4							R	r							
-			d2,4															
-D0,2			D2,4								R	r						
-D2,3			P9	P								R						
-			d0,9	G9														
-D1,2			D0,9							r								
-			d1,9															
-			D1,9							R	r							
-			d2,9															
-D2,3			D2,9								R	r						
-D0,3			P9	P								R						
-			d0,9															
-D4,2			D0,9	G9						r								
-			d1,9															
-			D1,9							R	r							
-			d2,9															
-D4,1			D2,9								R	r						
-			P9	P								R						
-			d0,9															
-			D0,9	G2						r								
-			d1,9															
-D2,3			D1,9							R	r							
-			d2,9															
-			D2,9								R	r						
-			P2	P								R						
-			d0,2															
-D1,3			D0,2	G13						r								
-			d1,2															
-			D1,2							R	r							
-			d2,2															
-D3,1			D2,2								R	r						
-D0,3			P13	P								R						
-			d0,13															
-D2,2			D0,13	G10						r								
-			d1,13															
-			D1,13							R	r							
-			d2,13															
-D1,3			D2,13								R	r						
-			P10	P								R						
-			d0,10															
-			D0,10	G16						r								
-			d1,10															
-			D1,10							R	r							
-			d2,10															
-D0,3			D2,10								R	r						
-D2,2			P16	P								R						
-			d0,16															
-D0,2			D0,16	G7						r								
-			d1,16															
-			D1,16							R	r							
-			d2,16															
-D4,3			D2,16								R	r						
-			P7	P								R						
-			d0,7															
-			D0,7	G9						r								
-			d1,7															
-D4,1			D1,7							R	r							
-			d2,7															
-			D2,7								R	r						
-D0,3												R						
-D0,3			P9	P														
-			d0,9															
-			D0,9	G5						r								
-			d1,9															
-			D1,9							R	r							
-			d2,9															
-D3,3			D2,9								R	r						
-D4,1			P5	P								R						
-			d0,5															
-			D0,5	G6						r								
-			d1,5															
-D2,1			D1,5							R	r							
-			d2,5															
-			D2,5								R	r						
-D2,2			P6	P								R						
-			d0,6															
-D1,2			D0,6	G11						r								
-			d1,6															
-			D1,6							R	r							
-			d2,6															
-D3,1			D2,6								R	r						
-D0,3			P11	P								R						
+D4,2			D2,4								R	r						
+D1,1			P15	P								R						
+			d0,15															
+D2,3			D0,15	G11						r								
+			d1,15															
+			D1,15							R	r							
+			d2,15															
+D1,2			D2,15								R	r						
+			P11	P								R						
 			d0,11															
-			D0,11	G9						r								
-			d1,11															
-D2,3			D1,11							R	r							
-			d2,11															
-			D2,11								R	r						
-D0,2												R						
-D1,3			P9	P														
-			d0,9															
-			D0,9	G10						r								
-			d1,9															
-D0,1			D1,9							R	r							
-			d2,9															
-			D2,9								R	r						
-D0,3			P10	P								R						
-			d0,10															
-			D0,10	G11						r								
-			d1,10															
-D3,3			D1,10							R	r							
-			d2,10															
-			D2,10								R	r						
-D1,3			P11	P								R						
-			d0,11															
-D3,2			D0,11	G15						r								
+D4,1			D0,11	G10						r								
 			d1,11															
 			D1,11							R	r							
 			d2,11															
 D3,2			D2,11								R	r						
-D3,2			P15	P								R						
-			d0,15															
-			D0,15	G15						r								
-			d1,15															
-D3,1			D1,15							R	r							
-			d2,15															
-			D2,15								R	r						
-D1,3												R						
-D4,3			P15	P														
-			d0,15															
-D2,3			D0,15	G8						r								
-			d1,15															
-			D1,15							R	r							
-			d2,15															
-D3,3			D2,15								R	r						
-D4,3			P8	P								R						
-			d0,8															
-D4,2			D0,8	G14						r								
-			d1,8															
-			D1,8							R	r							
-			d2,8															
-D2,3			D2,8								R	r						
-			P14	P								R						
-			d0,14															
-			D0,14	G13						r								
-			d1,14															
-D1,3			D1,14							R	r							
-			d2,14															
-			D2,14								R	r						
-D3,1			P13	P								R						
-			d0,13															
-			D0,13	G12						r								
-			d1,13															
-D0,1			D1,13							R	r							
-			d2,13															
-			D2,13								R	r						
-D3,1			P12	P								R						
-			d0,12															
-			D0,12	G14						r								
-			d1,12															
-D1,3			D1,12							R	r							
-			d2,12															
-			D2,12								R	r						
-D4,2			P14	P								R						
-			d0,14															
-D1,1			D0,14	G13						r								
-			d1,14															
-			D1,14							R	r							
-			d2,14															
-D2,3			D2,14								R	r						
-D3,2												R						
-D3,2			P13	P														
-			d0,13															
-			D0,13	G8						r								
-			d1,13															
-D4,2			D1,13							R	r							
-			d2,13															
-			D2,13								R	r						
-			P8	P								R						
-			d0,8															
-D3,3			D0,8	G13						r								
-			d1,8															
-			D1,8							R	r							
-			d2,8															
-D2,3			D2,8								R	r						
-D4,2			P13	P								R						
-			d0,13															
-			D0,13	G15						r								
-			d1,13															
-D2,3			D1,13							R	r							
-			d2,13															
-			D2,13								R	r						
-D1,2			P15	P								R						
-			d0,15															
-D2,3			D0,15	G12						r								
-			d1,15															
-			D1,15							R	r							
-			d2,15															
-D4,1			D2,15								R	r						
-D1,3			P12	P								R						
-			d0,12															
-D1,2			D0,12	G3						r								
-			d1,12															
-			D1,12							R	r							
-			d2,12															
-D2,1			D2,12								R	r						
-			P3	P								R						
-			d0,3															
-D1,1			D0,3	G13						r								
-			d1,3															
-			D1,3							R	r							
-			d2,3															
-D4,1			D2,3								R	r						
-			P13	P								R						
-			d0,13															
-			D0,13	G12						r								
-			d1,13															
-			D1,13							R	r							
-			d2,13															
-D3,1			D2,13								R	r						
-			P12	P								R						
-			d0,12															
-D2,2			D0,12	G11						r								
-			d1,12															
-			D1,12							R	r							
-			d2,12															
-D3,3			D2,12								R	r						
-			P11	P								R						
-			d0,11															
-			D0,11	G8						r								
-			d1,11															
-			D1,11							R	r							
-			d2,11															
-D1,1			D2,11								R	r						
-			P8	P								R						
-			d0,8															
-			D0,8	G9						r								
-			d1,8															
-D3,1			D1,8							R	r							
-			d2,8															
-			D2,8								R	r						
-D3,1			P9	P								R						
-			d0,9															
-D4,3			D0,9	G10						r								
-			d1,9															
-			D1,9							R	r							
-			d2,9															
-D3,3			D2,9								R	r						
-D1,1			P10	P								R						
-			d0,10															
-			D0,10	G14						r								
-			d1,10															
-D0,3			D1,10							R	r							
-			d2,10															
-			D2,10								R	r						
-D3,3			P14	P								R						
-			d0,14															
-			D0,14	G8						r								
-			d1,14															
-D1,1			D1,14							R	r							
-			d2,14															
-			D2,14								R	r						
-D0,1												R						
-D2,3			P8	P														
-			d0,8															
-			D0,8	G5						r								
-			d1,8															
-D4,2			D1,8							R	r							
-			d2,8															
-			D2,8								R	r						
-D1,1												R						
-D4,3			P5	P														
-			d0,5															
-			D0,5	G5						r								
-			d1,5															
-			D1,5							R	r							
-			d2,5															
-D4,3			D2,5								R	r						
-D0,2			P5	P								R						
-			d0,5															
-			D0,5	G10						r								
-			d1,5															
-D2,1			D1,5							R	r							
-			d2,5															
-			D2,5								R	r						
-D2,3												R						
-D1,2			P10	P														
-			d0,10															
-D1,1			D0,10	G16						r								
-			d1,10															
-			D1,10							R	r							
-			d2,10															
-D1,1			D2,10								R	r						
-D0,3			P16	P								R						
-			d0,16															
-			D0,16	G11						r								
-			d1,16															
-D3,2			D1,16							R	r							
-			d2,16															
-			D2,16								R	r						
-D1,1			P11	P								R						
-			d0,11															
-D3,1			D0,11	G12						r								
-			d1,11															
-			D1,11							R	r							
-			d2,11															
-D4,3			D2,11								R	r						
-			P12	P								R						
-			d0,12															
-D0,1			D0,12	G9						r								
-			d1,12															
-			D1,12							R	r							
-			d2,12															
-D3,3			D2,12								R	r						
-			P9	P								R						
-			d0,9															
-			D0,9	G12						r								
-			d1,9															
-D2,2			D1,9							R	r							
-			d2,9															
-			D2,9								R	r						
-D2,3			P12	P								R						
-			d0,12															
-			D0,12	G12						r								
-			d1,12															
-D1,2			D1,12							R	r							
-			d2,12															
-			D2,12								R	r						
-D1,1			P12	P								R						
-			d0,12	G18														
-D2,2			D0,12							r								
-			d1,12															
-			D1,12							R	r							
-			d2,12															
-D3,2			D2,12								R	r						
-D4,1			P18	P								R						
-			d0,18															
-			D0,18	G4						r								
-			d1,18															
-			D1,18							R	r							
-			d2,18															
-D0,1			D2,18								R	r						
-D2,1			P4	P								R						
-			d0,4															
-D3,2			D0,4	G15						r								
-			d1,4															
-			D1,4							R	r							
-			d2,4															
-D3,2			D2,4								R	r						
-			P15	P								R						
-			d0,15															
-			D0,15	G17						r								
-			d1,15															
-			D1,15							R	r							
-			d2,15															
-D0,3			D2,15								R	r						
-D1,1			P17	P								R						
-			d0,17															
-D4,2			D0,17	G6						r								
-			d1,17															
-			D1,17							R	r							
-			d2,17															
-D3,3			D2,17								R	r						
-D4,2			P6	P								R						
-			d0,6															
-			D0,6	G7						r								
-			d1,6															
-			D1,6							R	r							
-			d2,6															
-D2,2			D2,6								R	r						
-D4,3			P7	P								R						
-			d0,7															
-			D0,7	G6						r								
-			d1,7															
-			D1,7							R	r							
-			d2,7															
-D2,3			D2,7								R	r						
-D2,1			P6	P								R						
-			d0,6															
-D2,1			D0,6	G7						r								
-			d1,6															
-			D1,6							R	r							
-			d2,6															
-D0,2			D2,6								R	r						
-			P7	P								R						
-			d0,7															
-D0,2			D0,7	G8						r								
-			d1,7															
-			D1,7							R	r							
-			d2,7															
-D0,2			D2,7								R	r						
-D2,1			P8	P								R						
-			d0,8															
-D0,2			D0,8	G10						r								
-			d1,8															
-			D1,8							R	r							
-			d2,8															
-D3,3			D2,8								R	r						
-D1,2			P10	P								R						
-			d0,10															
-			D0,10	G5						r								
-			d1,10															
-D0,2			D1,10							R	r							
-			d2,10															
-			D2,10								R	r						
-D3,1												R						
-D3,1			P5	P														
-			d0,5															
-			D0,5	G7						r								
-			d1,5															
-D4,1			D1,5							R	r							
-			d2,5															
-			D2,5								R	r						
-D1,1			P7	P								R						
-			d0,7															
-			D0,7	G13						r								
-			d1,7															
-			D1,7							R	r							
-			d2,7															
-D3,3			D2,7								R	r						
-			P13	P								R						
-			d0,13															
-D0,1			D0,13	G5						r								
-			d1,13															
-			D1,13							R	r							
-			d2,13															
-D4,1			D2,13								R	r						
-D2,2			P5	P								R						
-			d0,5															
-D3,3			D0,5	G13						r								
-			d1,5															
-			D1,5							R	r							
-			d2,5															
-D2,1			D2,5								R	r						
-D1,2												R						
-D3,2			P13	P														
-			d0,13															
-			D0,13	G7						r								
-			d1,13															
-			D1,13							R	r							
-			d2,13															
-D3,2			D2,13								R	r						
-D4,3			P7	P								R						
-			d0,7															
-			D0,7	G1						r								
-			d1,7															
-D3,2			D1,7							R	r							
-			d2,7															
-			D2,7								R	r						
-D4,3												R						
-D4,2			P1	P														
-			d0,1															
-			D0,1	G9						r								
-			d1,1															
-			D1,1							R	r							
-			d2,1															
-D3,2			D2,1								R	r						
-			P9	P								R						
-			d0,9															
-D4,2			D0,9	G10						r								
-			d1,9															
-			D1,9							R	r							
-			d2,9															
-D2,1			D2,9								R	r						
 			P10	P								R						
 			d0,10															
-D1,3			D0,10	G9						r								
+			D0,10	G10						r								
 			d1,10															
-			D1,10							R	r							
+D4,2			D1,10							R	r							
 			d2,10															
-D0,1			D2,10								R	r						
-			P9	P								R						
-			d0,9															
-			D0,9	G17						r								
-			d1,9															
-D4,2			D1,9							R	r							
-			d2,9															
-			D2,9								R	r						
-D3,1			P17	P								R						
-			d0,17															
-D1,2			D0,17	G8						r								
-			d1,17															
-			D1,17							R	r							
-			d2,17															
-D0,1			D2,17								R	r						
-D0,1			P8	P								R						
-			d0,8															
-D1,1			D0,8	G12						r								
-			d1,8															
-			D1,8							R	r							
-			d2,8															
-D4,1			D2,8								R	r						
-			P12	P								R						
-			d0,12															
-D3,2			D0,12	G7						r								
-			d1,12															
-			D1,12							R	r							
-			d2,12															
-D1,2			D2,12								R	r						
-			P7	P								R						
-			d0,7															
-			D0,7	G13						r								
-			d1,7															
-D0,3			D1,7							R	r							
-			d2,7															
-			D2,7								R	r						
-D4,3			P13	P								R						
-			d0,13															
-			D0,13	G7						r								
-			d1,13															
-D1,2			D1,13							R	r							
-			d2,13															
-			D2,13								R	r						
-D2,1			P7	P								R						
-			d0,7															
-			D0,7	G12						r								
-			d1,7															
-D0,1			D1,7							R	r							
-			d2,7															
-			D2,7								R	r						
-D0,1												R						
-D4,1			P12	P														
-			d0,12															
-			D0,12	G13						r								
-			d1,12															
-D4,1			D1,12							R	r							
-			d2,12															
-			D2,12								R	r						
-			P13	P								R						
-			d0,13															
-D0,1			D0,13	G6						r								
-			d1,13															
-			D1,13							R	r							
-			d2,13															
-D1,3			D2,13								R	r						
-			P6	P								R						
-			d0,6															
-D1,2			D0,6	G11						r								
-			d1,6															
-			D1,6							R	r							
-			d2,6															
-D2,1			D2,6								R	r						
-D2,1			P11	P								R						
+			D2,10								R	r						
+D3,2												R						
+D0,1			P10	P														
+			d0,10															
+			D0,10	G11						r								
+			d1,10															
+D2,3			D1,10							R	r							
+			d2,10															
+			D2,10								R	r						
+D3,3												R						
+D1,3			P11	P														
 			d0,11															
 			D0,11	G9						r								
 			d1,11															
-D2,1			D1,11							R	r							
+D4,1			D1,11							R	r							
 			d2,11															
 			D2,11								R	r						
 D0,1			P9	P								R						
 			d0,9															
-			D0,9	G12						r								
-			d1,9															
-D2,3			D1,9							R	r							
-			d2,9															
-			D2,9								R	r						
-D0,3												R						
-D0,2			P12	P														
-			d0,12															
-			D0,12	G13						r								
-			d1,12															
-D3,3			D1,12							R	r							
-			d2,12															
-			D2,12								R	r						
-			P13	P								R						
-			d0,13															
-D1,1			D0,13	G2						r								
-			d1,13															
-			D1,13							R	r							
-			d2,13															
-D1,1			D2,13								R	r						
-D3,3			P2	P								R						
-			d0,2															
-			D0,2	G4						r								
-			d1,2															
-			D1,2							R	r							
-			d2,2															
-D1,1			D2,2								R	r						
-D1,2												R						
-D0,1			P4	P														
-			d0,4															
-			D0,4	G9						r								
-			d1,4															
-			D1,4							R	r							
-			d2,4															
-D4,1			D2,4								R	r						
-D2,3			P9	P								R						
-			d0,9															
-			D0,9	G11						r								
-			d1,9															
-D0,2			D1,9							R	r							
-			d2,9															
-			D2,9								R	r						
-			P11	P								R						
-			d0,11															
-D0,1			D0,11	G7						r								
-			d1,11															
-			D1,11							R	r							
-			d2,11															
-D2,3			D2,11								R	r						
-			P7	P								R						
-			d0,7															
-D3,2			D0,7	G10						r								
-			d1,7															
-			D1,7							R	r							
-			d2,7															
-D0,2			D2,7								R	r						
-			P10	P								R						
-			d0,10															
-D1,1			D0,10	G6						r								
-			d1,10															
-			D1,10							R	r							
-			d2,10															
-D1,2			D2,10								R	r						
-D4,2			P6	P								R						
-			d0,6															
-			D0,6	G6						r								
-			d1,6															
-			D1,6							R	r							
-			d2,6															
-D0,3			D2,6								R	r						
-D0,1			P6	P								R						
-			d0,6															
-			D0,6	G9						r								
-			d1,6															
-			D1,6							R	r							
-			d2,6															
-D3,3			D2,6								R	r						
-			P9	P								R						
-			d0,9															
-D2,2			D0,9	G11						r								
+			D0,9	G9						r								
 			d1,9															
 			D1,9							R	r							
 			d2,9															
-D2,3			D2,9								R	r						
-D1,3												R						
-D1,2			P11	P														
+D1,3			D2,9								R	r						
+			P9	P								R						
+			d0,9															
+D3,3			D0,9	G7						r								
+			d1,9															
+			D1,9							R	r							
+			d2,9								R							
+D0,3			D2,9									r						
+D3,3												R						
+D1,3			P7	P														
+			d0,7															
+			D0,7	G12						r								
+			d1,7															
+D1,2			D1,7							R	r							
+			d2,7															
+			D2,7								R	r						
+D4,3												R						
+D3,1			P12	P														
+			d0,12															
+			D0,12	G5						r								
+			d1,12															
+			D1,12							R	r							
+			d2,12															
+D4,3			D2,12								R	r						
+D4,3			P5	P								R						
+			d0,5															
+			D0,5	G9						r								
+			d1,5															
+D4,1			D1,5							R	r							
+			d2,5															
+			D2,5								R	r						
+D1,2			P9	P								R						
+			d0,9															
+			D0,9	G7						r								
+			d1,9															
+D4,2			D1,9							R	r							
+			d2,9															
+			D2,9								R	r						
+D0,2												R						
+D2,3			P7	P														
+			d0,7															
+			D0,7	G6						r								
+			d1,7															
+D4,2			D1,7							R	r							
+			d2,7															
+			D2,7								R	r						
+D0,2												R						
+D0,2			P6	P														
+			d0,6															
+			D0,6	G4						r								
+			d1,6															
+D0,2			D1,6							R	r							
+			d2,6															
+			D2,6								R	r						
+D0,3												R						
+D1,1			P4	P														
+			d0,4															
+			D0,4	G16						r								
+			d1,4															
+D0,1			D1,4							R	r							
+			d2,4															
+			D2,4								R	r						
+D1,3			P16	P								R						
+			d0,16															
+			D0,16	G15						r								
+			d1,16															
+D0,1			D1,16							R	r							
+			d2,16															
+			D2,16								R	r						
+			P15	P								R						
+			d0,15															
+D3,3			D0,15	G10						r								
+			d1,15															
+			D1,15							R	r							
+			d2,15															
+D3,2			D2,15								R	r						
+D0,3			P10	P								R						
+			d0,10															
+			D0,10	G12						r								
+			d1,10															
+			D1,10							R	r							
+			d2,10															
+D4,1			D2,10								R	r						
+D2,1			P12	P								R						
+			d0,12															
+			D0,12	G14						r								
+			d1,12															
+D2,1			D1,12							R	r							
+			d2,12															
+			D2,12								R	r						
+D2,3												R						
+D4,1			P14	P														
+			d0,14															
+			D0,14	G7						r								
+			d1,14															
+			D1,14							R	r							
+			d2,14															
+D0,2			D2,14								R	r						
+D3,2												R						
+D0,1			P7	P														
+			d0,7															
+			D0,7	G14						r								
+			d1,7															
+			D1,7							R	r							
+			d2,7															
+D2,1			D2,7								R	r						
+D2,3			P14	P								R						
+			d0,14															
+D4,3			D0,14	G10						r								
+			d1,14															
+			D1,14							R	r							
+			d2,14															
+D4,3			D2,14								R	r						
+			P10	P								R						
+			d0,10															
+D3,2			D0,10	G10						r								
+			d1,10															
+			D1,10							R	r							
+			d2,10															
+D0,2			D2,10								R	r						
+D2,3												R						
+D2,3			P10	P														
+			d0,10															
+			D0,10	G11						r								
+			d1,10															
+			D1,10							R	r							
+			d2,10															
+D1,3			D2,10								R	r						
+D1,1			P11	P								R						
 			d0,11															
 			D0,11	G15						r								
 			d1,11															
 			D1,11							R	r							
 			d2,11															
-D2,2			D2,11								R	r						
-			P15	P								R						
+D2,1			D2,11								R	r						
+D4,2			P15	P								R						
 			d0,15															
-D4,3			D0,15	G15						r								
+			D0,15	G11						r								
 			d1,15															
-			D1,15							R	r							
+D4,2			D1,15							R	r							
 			d2,15															
-D3,1			D2,15								R	r						
-			P15	P								R						
-			d0,15															
-D2,1			D0,15	G11						r								
-			d1,15															
-			D1,15							R	r							
-			d2,15															
-D2,2			D2,15								R	r						
-D4,1			P11	P								R						
+			D2,15								R	r						
+D0,3			P11	P								R						
 			d0,11															
-D1,2			D0,11	G11						r								
+			D0,11	G16						r								
 			d1,11															
-			D1,11							R	r							
+D1,3			D1,11							R	r							
 			d2,11															
-D1,1			D2,11								R	r						
-D1,1			P11	P								R						
-			d0,11															
-D3,3			D0,11	G13						r								
-			d1,11															
-			D1,11							R	r							
-			d2,11															
-D4,3			D2,11								R	r						
-D2,1												R						
-D3,2			P13	P														
+			D2,11								R	r						
+D1,1			P16	P								R						
+			d0,16															
+			D0,16	G13						r								
+			d1,16															
+D0,3			D1,16							R	r							
+			d2,16															
+			D2,16								R	r						
+D1,3												R						
+D4,3			P13	P														
 			d0,13															
-			D0,13	G7						r								
+			D0,13	G15						r								
 			d1,13															
 			D1,13							R	r							
 			d2,13															
-D4,3			D2,13								R	r						
-D3,1												R						
-D1,2			P7	P														
-			d0,7															
-			D0,7	G12						r								
-			d1,7															
-D0,2			D1,7							R	r							
-			d2,7															
-			D2,7								R	r						
-D1,1			P12	P								R						
-			d0,12															
-D1,1			D0,12	G9						r								
-			d1,12															
-			D1,12							R	r							
-			d2,12															
-D4,3			D2,12								R	r						
-D0,2			P9	P								R						
-			d0,9															
-			D0,9	G7						r								
-			d1,9															
-D2,2			D1,9							R	r							
-			d2,9															
-			D2,9								R	r						
-D1,3			P7	P								R		T1,105				
-			d0,7															
-D2,2			D0,7	G9						r								
-			d1,7															
-			D1,7							R	r							
-						B10				B3,4								
-...	...	...	...	...	...	F	...	...	...	...	...	...	...	...	...	...	...	
-			d2,7															
-D3,1			D2,7								R	r						
-D0,1			P9	P								R						
-			d0,9															
-D4,2			D0,8	G8						r								
+D3,1			D2,13								R	r						
+D4,2			P15	P								R						
+			d0,15															
+			D0,15	G8						r								
+			d1,15															
+			D1,15							R	r							
+			d2,15															
+D0,2			D2,15								R	r						
+D2,1			P8	P								R						
+			d0,8															
+			D0,8	G10						r								
 			d1,8															
 			D1,8							R	r							
 			d2,8															
-D4,2			D2,8								R	r						
-			P8	P								R						
-			d0,8															
-			D0,8	G11						r								
-D4,3			d1,8							R								
-			D1,8								r							
-			d2,8															
-D4,3			D2,8								R	r						
-D1,2			P11	P								R						
-			d0,11															
-D2,3			D0,11	G14						r								
-			d1,11															
-			D1,11							R	r							
-			d2,11															
-D0,1			D2,11								R	r			T2,105			
-			P14	P								R						
-			d0,14															
-			D0,14				B10					B3,4						
-...	...	...	...	...	...	...	F	...	...	...	...	...	...	...	...	...	...	
-			d1,14	G10						r								
-			D1,14							R	r							
-			d2,14															
-D3,3			D2,13								R	r						
-D3,2								B10		B1,4		R				T3,105		
-...	...	...	...	...	...	...	...	F	...	...	...	...	...	...	...	...	...	
+D1,1			D2,8								R	r						
+D2,3												R						
 D0,2			P10	P														
 			d0,10															
-			D0,9	G19						r								
-			d1,9															
-D0,3			D1,9							R	r							
-			d2,9															
-			D2,9								R	r						
-D4,1												R						
-D1,3			P19	P														
-			d0,19															
-			D0,19	G7						r								
-			d1,19															
-D2,2			D1,19							R	r							
-			d2,19															
-			D2,19								R	r						
-D2,2			P7	P								R						
-			d0,7															
-			D0,7	G10						r								
-			d1,7															
-D4,2			D1,7							R	r							
-			d2,7															
-			D2,7								R	r						
-D3,3			P10	P								R						
+			D0,10	G10						r								
+			d1,10															
+D4,2			D1,10							R	r							
+			d2,10															
+			D2,10								R	r						
+D1,3			P10	P								R						
 			d0,10															
-			D0,10	G16						r								
+			D0,10	G9						r								
+			d1,10															
+D2,2			D1,10							R	r							
+			d2,10															
+			D2,10								R	r						
+D1,1												R						
+D1,3			P9	P														
+			d0,9															
+			D0,9	G11						r								
+			d1,9															
+			D1,9							R	r							
+			d2,9															
+D1,2			D2,9								R	r						
+D3,1												R						
+D0,3			P11	P														
+			d0,11															
+			D0,11	G10						r								
+			d1,11															
+D4,3			D1,11							R	r							
+			d2,11															
+			D2,11								R	r						
+D4,3			P10	P								R						
+			d0,10															
+D1,1			D0,10	G16						r								
 			d1,10															
 			D1,10							R	r							
 			d2,10															
-D3,3			D2,10								R	r						
-D2,2			P16	P								R						
+D4,1			D2,10								R	r						
+			P16	P								R						
 			d0,16															
-D4,3			D0,16	G9						r								
+D3,3			D0,16	G9						r								
 			d1,16															
-			D1,16							R	r						T4,105	
+			D1,16							R	r							
 			d2,16															
-			D2,16								R	r						
-									B10		B1,4							
-...	...	...	...	...	...	...	...	...	F	...	...	...	...	...	...	...	...	
-D2,2												R						
-D0,2			P9	P														
+D2,3			D2,16								R	r						
+D3,2			P9	P								R						
 			d0,9															
-			D0,9	G9						r								
+			D0,9	G4						r								
 			d1,9															
-D3,3			D1,8							R	r							
+			D1,9							R	r							
+			d2,9															
+D2,3			D2,9								R	r						
+D2,3			P4	P								R						
+			d0,4															
+			D0,4	G13						r								
+			d1,4															
+D2,2			D1,4							R	r							
+			d2,4															
+			D2,4								R	r						
+			P13	P								R						
+			d0,13															
+D1,3			D0,13	G12						r								
+			d1,13															
+			D1,13							R	r							
+			d2,13															
+D1,2			D2,13								R	r						
+D4,3			P12	P								R						
+			d0,12															
+			D0,12	G12						r								
+			d1,12															
+			D1,12							R	r							
+			d2,12															
+D1,2			D2,12								R	r						
+D1,1			P12	P								R						
+			d0,12															
+D3,3			D0,12	G13						r								
+			d1,12															
+			D1,12							R	r							
+			d2,12															
+D3,1			D2,12								R	r						
+D3,2												R						
+D3,1			P13	P														
+			d0,13															
+			D0,13	G8						r								
+			d1,13															
+			D1,13							R	r							
+			d2,13															
+D4,2			D2,13								R	r						
+D4,3												R						
+D1,1			P8	P														
+			d0,8															
+			D0,8	G12						r								
+			d1,8															
+D1,3			D1,8							R	r							
 			d2,8															
 			D2,8								R	r						
+			P12	P								R						
+			d0,12															
+D3,2			D0,12	G4						r								
+			d1,12															
+			D1,12							R	r							
+			d2,12															
+D1,2			D2,12								R	r						
+			P4	P								R						
+			d0,4															
+D1,3			D0,4	G8						r								
+			d1,4															
+			D1,4							R	r							
+			d2,4															
+D4,1			D2,4								R	r						
+			P8	P								R						
+			d0,8															
+D0,2			D0,8	G13						r								
+			d1,8															
+			D1,8							R	r							
+			d2,8															
+D2,2			D2,8								R	r						
+			P13	P								R						
+			d0,13															
+D3,3			D0,13	G11						r								
+			d1,13															
+			D1,13							R	r							
+			d2,13															
+D0,1			D2,13								R	r						
+			P11	P								R						
+			d0,11															
+			D0,11	G9						r								
+			d1,11															
+D4,1			D1,11							R	r							
+			d2,11															
+			D2,11								R	r						
+D3,2			P9	P								R						
+			d0,9															
+			D0,9	G15						r								
+			d1,9															
+D1,3			D1,9							R	r							
+			d2,9															
+			D2,9								R	r						
+D0,3												R						
+D1,3			P15	P														
+			d0,15															
+			D0,15	G13						r								
+			d1,15															
+			D1,15							R	r							
+			d2,15															
+D1,2			D2,15								R	r						
+D3,3												R						
+D2,1			P13	P														
+			d0,13															
+			D0,13	G12						r								
+			d1,13							R								
+D3,1			D1,13								r							
+			d2,13															
+			D2,13								R	r						
+			P12	P								R						
+			d0,12															
+D2,1			D0,12	G10						r								
+			d1,12															
+			D1,12							R	r							
+			d2,12															
+D0,3			D2,12								R	r						
+D1,1			P10	P								R						
+			d0,10															
+D4,1			D0,10	G7						r								
+			d1,10															
+			D1,10							R	r							
+			d2,10															
+D1,1			D2,10								R	r						
+			P7	P								R						
+			d0,7															
+D0,2			D0,7	G12						r								
+			d1,7															
+			D1,7							R	r							
+			d2,7															
+D0,2			D2,7								R	r						
+D2,2			P12	P								R						
+			d0,12															
+D1,2			D0,12	G9						r								
+			d1,12															
+			D1,12							R	r							
+			d2,12															
+D2,3			D2,12								R	r						
+D2,3			P9	P								R						
+			d0,9															
+D1,3			D0,9	G10						r								
+			d1,9															
+			D1,9							R	r							
+			d2,9															
+D1,2			D2,9								R	r						
+D4,2			P10	P								R						
+			d0,10															
+D4,2			D0,10	G7						r								
+			d1,10															
+			D1,10							R	r							
+			d2,10															
+D0,3			D2,10								R	r						
+			P7	P								R						
+			d0,7															
+D2,1			D0,7	G14						r								
+			d1,7															
+			D1,7							R	r							
+			d2,7															
+D1,3			D2,7								R	r						
+			P14	P								R						
+			d0,14															
+			D0,14	G4						r								
+			d1,14															
+D2,3			D1,14							R	r							
+			d2,14															
+			D2,14								R	r						
 D1,1												R						
-D4,1			P9	P														
+D4,3			P4	P														
+			d0,4															
+			D0,4	G10						r								
+			d1,4															
+D2,2			D1,4							R	r							
+			d2,4															
+			D2,4								R	r						
+D2,3												R						
+D1,2			P10	P														
+			d0,10															
+			D0,10	G13						r								
+			d1,10															
+			D1,10							R	r							
+			d2,10															
+D4,2			D2,10								R	r						
+			P13	P								R						
+			d0,13															
+D4,1			D0,13	G6						r								
+			d1,13															
+			D1,13							R	r							
+			d2,13															
+D3,1			D2,13								R	r						
+			P6	P								R						
+			d0,6															
+			D0,6	G5						r								
+			d1,6															
+D3,1			D1,6							R	r							
+			d2,6															
+			D2,6								R	r						
+D4,2			P5	P								R						
+			d0,5															
+			D0,5	G10						r								
+			d1,5															
+D4,1			D1,5							R	r							
+			d2,5															
+			D2,5								R	r						
+D1,1			P10	P								R						
+			d0,10															
+			D0,10	G15						r								
+			d1,10															
+D3,1			D1,10							R	r							
+			d2,10															
+			D2,10								R	r						
+D2,1			P15	P								R						
+			d0,15															
+D2,3			D0,15	G10						r								
+			d1,15															
+			D1,15							R	r							
+			d2,15															
+D4,2			D2,15								R	r						
+			P10	P								R						
+			d0,10															
+			D0,10	G8						r								
+			d1,10															
+D0,1			D1,10							R	r							
+			d2,10															
+			D2,10								R	r						
+			P8	P								R						
+			d0,8															
+D1,2			D0,8	G7						r								
+			d1,8															
+			D1,8							R	r							
+			d2,8															
+D1,1			D2,8								R	r						
+			P7	P								R						
+			d0,7															
+			D0,7	G12						r								
+			d1,7															
+D3,1			D1,7							R	r							
+			d2,7															
+			D2,7								R	r						
+D1,1												R						
+D3,2			P12	P														
+			d0,12															
+D1,3			D0,12	G9						r								
+			d1,12															
+			D1,12							R	r							
+			d2,12															
+D2,2			D2,12								R	r						
+D3,3			P9	P								R						
+			d0,9															
+			D0,9	G14						r								
+			d1,9															
+			D1,9							R	r							
+			d2,9															
+D0,1			D2,9								R	r						
+D1,2			P14	P								R						
+			d0,14															
+			D0,14	G10						r								
+			d1,14															
+D3,2			D1,14							R	r							
+			d2,14															
+			D2,14								R	r						
+D0,1			P10	P								R						
+			d0,10															
+			D0,10	G13						r								
+			d1,10															
+D3,3			D1,10							R	r							
+			d2,10															
+			D2,10								R	r						
+D4,1			P13	P								R						
+			d0,13															
+D4,1			D0,13	G11						r								
+			d1,13															
+			D1,13							R	r							
+			d2,13															
+D0,3			D2,13								R	r						
+D1,3			P11	P								R						
+			d0,11															
+			D0,11	G9						r								
+			d1,11															
+D3,3			D1,11							R	r			T1,105				
+			d2,11															
+			D2,11			B10				B3,4	R	r						
+...	...	...	...	...	...	F	...	...	...	...	...	...	...	...	...	...	...	
+D3,1												R						
+D2,1			P9	P														
+			d0,9															
+			D0,8	G8						r								
+			d1,8															
+D4,2			D1,8							R	r							
+			d2,8															
+			D2,8								R	r						
+D3,2			P8	P								R						
+			d0,8															
+			D0,8	G11						r								
+			d1,8															
+			D1,8							R	r							
+			d2,8															
+D0,1			D2,8								R	r						
+D0,1												R						
+D0,3			P11	P														
+			d0,11															
+			D0,11	G8						r								
+			d1,11															
+			D1,11							R	r							
+			d2,11															
+D0,3			D2,11								R	r						
+			P8	P								R						
+			d0,8															
+D1,3			D0,8	G1						r								
+			d1,8															
+			D1,8							R	r							
+			d2,8															
+D1,2			D2,8								R	r						
+D1,1			P1	P								R						
+			d0,1															
+D3,3			D0,1	G8						r								
+			d1,1															
+			D1,1							R	r							
+			d2,1															
+D1,3			D2,1								R	r						
+D1,2			P8	P								R						
+			d0,8															
+			D0,8	G13						r								
+			d1,8															
+D4,3			D1,8							R	r							
+			d2,8															
+			D2,8								R	r						
+D4,1			P13	P								R						
+			d0,13															
+D2,3			D0,13	G4						r								
+			d1,13															
+			D1,13							R	r							
+			d2,13															
+D3,1			D2,13								R	r						
+			P4	P								R						
+			d0,4															
+			D0,4	G7						r								
+			d1,4															
+D0,1			D1,4							R	r							
+			d2,4															
+			D2,4								R	r						
+D0,2												R						
+D4,1			P7	P														
+			d0,7															
+			D0,7	G8						r								
+			d1,7															
+			D1,7							R	r							
+			d2,7															
+D4,1			D2,7								R	r						
+D3,2			P8	P								R						
+			d0,8															
+D2,2			D0,8	G6						r								
+			d1,8															
+			D1,8							R	r							
+			d2,8															
+D0,2			D2,8								R	r						
+D1,1			P6	P								R						
+			d0,6															
+D1,1			D0,6	G3						r								
+			d1,6															
+			D1,6							R	r							
+			d2,6															
+D3,2			D2,6								R	r						
+D3,3			P3	P								R						
+			d0,3															
+			D0,3	G11						r								
+			d1,3							R								
+D2,1			D1,3								r							
+			d2,3															
+			D2,3								R	r						
+D2,3												R						
+D0,3			P11	P														
+			d0,11															
+			D0,11	G12						r								
+			d1,11															
+D0,2			D1,11							R	r							
+			d2,11															
+			D2,11								R	r						
+D2,2			P12	P								R						
+			d0,12															
+D1,3			D0,12	G11						r								
+			d1,12															
+			D1,12							R	r							
+			d2,12															
+D3,1			D2,12								R	r						
+			P11	P								R						
+			d0,11															
+			D0,11	G4						r								
+			d1,11															
+D3,3			D1,11							R	r							
+			d2,11															
+			D2,11								R	r						
+D4,1												R						
+D4,2			P4	P														
+			d0,4															
+			D0,4	G8						r								
+			d1,4															
+			D1,4							R	r							
+			d2,4															
+D4,2			D2,4								R	r						
+D1,1			P8	P								R						
+			d0,8															
+D2,3			D0,8	G11						r								
+			d1,8															
+			D1,8							R	r							
+			d2,8															
+D0,3			D2,8								R	r						
+			P11	P								R						
+			d0,11															
+D4,3			D0,11	G14						r								
+			d1,11															
+			D1,11							R	r							
+			d2,11															
+D4,1			D2,11								R	r						
+D2,1			P14	P								R						
+			d0,14															
+			D0,14	G7						r								
+			d1,14															
+D0,3			D1,14							R	r							
+			d2,14															
+			D2,14								R	r						
+D4,1			P7	P								R						
+			d0,7															
+			D0,7	G12						r								
+			d1,7															
+			D1,7							R	r							
+			d2,7															
+D1,1			D2,7								R	r						
+			P12	P								R						
+			d0,12															
+D4,2			D0,12	G9						r								
+			d1,12															
+			D1,12							R	r							
+			d2,12															
+D0,3			D2,12								R	r						
+D4,3			P9	P								R						
+			d0,9															
+			D0,9	G8						r								
+			d1,9															
+D2,3			D1,9							R	r							
+			d2,9															
+			D2,9								R	r						
+D0,1			P8	P								R						
+			d0,8															
+			D0,8	G7						r								
+			d1,8															
+D1,3			D1,8							R	r							
+			d2,8															
+			D2,8								R	r						
+D3,1												R						
+D0,3			P7	P														
+			d0,7															
+			D0,7	G12						r								
+			d1,7															
+			D1,7							R	r							
+			d2,7															
+D3,1			D2,7								R	r						
+			P12	P								R						
+			d0,12															
+			D0,12	G4						r								
+			d1,12															
+D4,1			D1,12							R	r							
+			d2,12															
+			D2,12								R	r					T4,105	
+D4,3			P4	P								R						
+			d0,4															
+			D0,4	G17					B10	r	B1,4							
+...	...	...	...	...	...	...	...	...	F	...	...	...	...	...	...	...	...	
+			d1,4							R								
+D1,2			D1,3								r							
+			d2,3															
+			D2,3								R	r						
+D4,3			P17	P								R						
+			d0,17															
+			D0,17	G9						r								
+			d1,17															
+			D1,17							R	r							
+			d2,17															
+D2,3			D2,17								R	r						
+D0,1			P9	P								R						
 			d0,9															
 			D0,9	G6						r								
 			d1,9															
 D2,3			D1,9							R	r							
 			d2,9															
 			D2,9								R	r						
-D0,1			P6	P								R						
+D4,3												R						
+D3,3			P6	P														
 			d0,6															
-			D0,6	G6						r								
+			D0,6	G19						r								
 			d1,6															
-			D1,6							R	r							
-			d2,6															
-D1,3			D2,6								R	r						
-			P6	P								R						
-			d0,6															
-D1,2			D0,6	G6						r								
-			d1,6															
-			D1,6							R	r							
-			d2,6															
-D0,1			D2,6								R	r						
-			P6	P								R						
-			d0,6															
-			D0,6	G11						r								
-			d1,6															
-D4,2			D1,6							R	r							
+D0,3			D1,6							R	r							
 			d2,6															
 			D2,6								R	r						
-D1,1			P11	P								R						
-			d0,11															
-			D0,11	G13						r								
-			d1,11															
-			D1,11							R	r							
-			d2,11															
-D0,3			D2,11								R	r						
-D1,1			P13	P								R						
-			d0,13															
-			D0,13	G9						r								
-			d1,13															
-			D1,13							R	r							
-			d2,13															
-D4,2			D2,13								R	r						
-D0,2												R						
-D2,3			P9	P														
-			d0,9															
-			D0,9	G4						r								
-			d1,9															
-			D1,9							R	r							
-			d2,9															
-D4,1			D2,9								R	r						
-			P4	P								R						
-			d0,4															
-			D0,4	G9						r								
-			d1,4															
-D1,3			D1,4							R	r							
-			d2,4															
-			D2,4								R	r						
-D3,1			P9	P								R						
-			d0,9															
-D1,2			D0,9	G2						r								
-			d1,9															
-			D1,9							R	r							
-			d2,9															
-D2,3			D2,9								R	r						
-			P2	P								R						
-			d0,2															
-D0,2			D0,2	G18						r								
-			d1,2															
-			D1,2							R	r							
-			d2,2															
-D1,1			D2,2								R	r						
-D3,3			P18	P								R						
-			d0,18															
-D4,1			D0,18	G11						r								
-			d1,18															
-			D1,18							R	r							
-			d2,18															
-D2,2			D2,18								R	r						
-			P11	P								R						
-			d0,11															
-			D0,11	G15						r								
-			d1,11															
-D2,3			D1,11							R	r							
-			d2,11															
-			D2,11								R	r						
-D4,3												R						
-D1,2			P15	P														
-			d0,15															
-D1,2			D0,15	G6						r								
-			d1,15															
-			D1,15							R	r							
-			d2,15															
-D4,2			D2,15								R	r						
-			P6	P								R						
-			d0,6															
-			D0,6	G13						r								
-			d1,6															
-			D1,6							R	r							
-			d2,6															
-D2,1			D2,6								R	r						
-D0,3	C0,5				L							R	T0,105					
-D4,2	W		P13	P										t0,5				
-			d0,13															
-			D0,13	G14						r								
-			d1,13															
-			D1,13							R	r							
-			d2,13															
-D0,1			D2,13								R	r						
-			P14	P								R						
-			d0,14															
-D2,1			D0,14	G9						r								
-			d1,14															
-			D1,14							R	r							
-			d2,14															
-D3,3			D2,14								R	r						
-			P9	P								R						
-			d0,9															
-			D0,9	G8						r								
-			d1,9															
-			D1,9							R	r							
-			d2,9															
-D0,2			D2,9								R	r						
-D1,3												R						
-D2,3			P8	P														
-			d0,8															
-			D0,8	G13						r								
-			d1,8															
-			D1,8							R	r							
-			d2,8															
-D3,1			D2,8								R	r						
-D2,1			P13	P								R						
-			d0,13															
-			D0,13	G6						r								
-			d1,13															
-D1,1			D1,13							R	r							
-			d2,13															
-			D2,13								R	r						
-			P6	P								R						
-			d0,6	G7														
-D1,2			D0,6							r								
-			d1,6															
-			D1,6							R	r							
-			d2,6															
-D0,1			D2,6								R	r		T0,5				
-D2,1	T0,105		P7	P								R						
+D4,1												R						
+D1,3			P19	P														
+			d0,19															
+D2,2			D0,19	G7						r								
+			d1,19															
+			D1,19							R	r				T2,105			
+			d2,19															
+D2,2			D2,19								R	r						
+												R						
+							B10					B3,4						
+...	...	...	...	...	...	...	F	...	...	...	...	...	...	...	...	...	...	
+			P7	P														
 			d0,7															
-	W		D0,7	G8						r					t0,105			
+			D0,7	G13						r								
 			d1,7															
-			D1,7							R	r							
+D4,1			D1,7							R	r							
 			d2,7															
-D1,2			D2,7								R	r						
-D1,1			P8	P								R						
-			d0,8															
-D0,1			D0,8	G7						r								
-			d1,8															
-			D1,8							R	r							
-			d2,8															
-D0,1			D2,8								R	r						
-D1,2			P7	P								R						
-			d0,7															
-			D0,7	G9						r								
-			d1,7															
-D2,2			D1,7							R	r							
-			d2,7															
+			U2,1															
 			D2,7								R	r						
-D3,1			P9	P								R						
-			d0,9															
-D4,2			D0,9	G11						r								
-			d1,9															
-			D1,9							R	r							
-			d2,9															
-D1,3			D2,9								R	r						
-D2,2			P11	P								R						
-			d0,11															
-			D0,11	G13						r								
-			d1,11															
-			D1,11							R	r							
-			d2,11															
-D0,2			D2,11								R	r						
-D1,3			P13	P								R						
+			P13	P								R						
 			d0,13															
-			D0,13	G10						r								
+D1,3			D0,13	G15						r								
 			d1,13															
 			D1,13							R	r							
 			d2,13															
-D2,2			D2,13								R	r						
-			P10	P								R						
-			d0,10															
-			D0,10	G14						r								
-			d1,10															
-D1,2			D1,10							R	r							
-			d2,10															
-			D2,10								R	r						
-D2,3			P14	P								R						
-			d0,14															
-			D0,14	G13						r								
-			d1,14															
-D2,1			D1,14							R	r							
-			d2,14															
-			D2,14								R	r						
-			P13	P								R						
-			d0,13															
-D3,2			D0,13	G13						r								
-			d1,13															
-			D1,13							R	r							
-			d2,13															
-D4,1			D2,13								R	r						
-			P13	P								R						
-			d0,13															
-			D0,13	G13						r								
-			d1,13															
-D0,1			D1,13							R	r							
-			d2,13															
-			D2,13								R	r						
-D3,2												R						
-D3,2			P13	P														
-			d0,13															
-			D0,13	G15						r								
-			d1,13															
-D1,2			D1,13							R	r							
-			d2,13															
-			D2,13								R	r						
-D1,2												R						
-D2,2			P15	P														
+D1,1			D2,12								R	r						
+			P15	P								R						
 			d0,15															
-			D0,15	G10						r								
+D1,1			D0,15	G11						r								
 			d1,15															
 			D1,15							R	r							
 			d2,15															
-D4,2			D2,15								R	r						
-D1,1			P10	P								R						
-			d0,10															
-			D0,10	G11						r								
-			d1,10															
-D3,1			D1,10							R	r							
-			d2,10															
-			D2,10								R	r						
-D0,2			P11	P								R						
+D3,3			D2,15								R	r						
+D2,3			P11	P								R						
 			d0,11															
-D3,3			D0,11	G6						r								
+D0,2			D0,11	G9						r								
 			d1,11															
 			D1,11							R	r							
 			d2,11															
 D3,1			D2,11								R	r						
-D3,1												R						
-D0,3			P6	P														
-			d0,6															
-			D0,6	G7						r								
-			d1,6															
-			D1,6							R	r							
-			d2,6															
-D1,2			D2,6								R	r						
-D4,3												R						
-D4,1			P7	P														
-			d0,7															
-			D0,7	G11						r								
-			d1,7															
-D4,2			D1,7							R	r							
-			d2,7															
-			D2,7								R	r						
-D2,2			P11	P								R						
-			d0,11															
-D2,1			D0,11	G12						r								
-			d1,11															
-			D1,11							R	r							
-			d2,11															
-D1,3			D2,11								R	r						
-			P12	P								R						
-			d0,12															
-D1,3			D0,12	G8						r								
-			d1,12															
-			D1,12							R	r							
-			d2,12															
-D1,1			D2,12								R	r						
-			P8	P								R						
-			d0,8															
-D2,1			D0,8	G12						r								
-			d1,8															
-			D1,8							R	r							
-			d2,8															
-D3,2			D2,8								R	r						
-D3,1			P12	P								R						
-			d0,12															
-			D0,12	G12						r								
-			d1,12															
-D1,1			D1,12							R	r							
-			d2,12															
-			D2,12								R	r						
-D4,1			P12	P								R						
-			d0,12															
-D1,1			D0,12	G13						r								
-			d1,12															
-			D1,12							R	r							
-			d2,12															
-D2,1			D2,12								R	r						
-			P13	P								R						
-			d0,13															
-			D0,13	G11						r								
-			d1,13															
-D3,3			D1,13							R	r							
-			d2,13															
-			D2,13								R	r						
-			P11	P								R						
-			d0,11															
-D2,1			D0,11	G9						r								
-			d1,11															
-			D1,11							R	r							
-			d2,11															
-D1,2			D2,11								R	r						
-			P9	P								R						
-			d0,9															
-D4,3			D0,9	G10						r								
-			d1,9															
-			D1,9							R	r							
-			d2,9															
-D1,1			D2,9								R	r						
-D4,3			P10	P								R						
-			d0,10															
-D0,1			D0,10	G5						r								
-			d1,10															
-			D1,10							R	r							
-			d2,10															
-D2,2			D2,10								R	r						
-D2,3												R						
-D0,3			P5	P														
-			d0,5															
-			D0,5	G12						r								
-			d1,5															
-D2,1			D1,5							R	r							
-			d2,5															
-			D2,5								R	r						
-D3,3												R						
-D2,1			P12	P														
-			d0,12															
-			D0,12	G11						r								
-			d1,12															
-			D1,12							R	r							
-			d2,12															
-D1,3			D2,12								R	r						
-D4,2			P11	P								R						
-			d0,11															
-			D0,11	G6						r								
-			d1,11															
-D3,3			D1,11							R	r							
-			d2,11															
-			D2,11								R	r						
-			P6	P								R						
-			d0,6															
-D1,3			D0,6	G7						r								
-			d1,6															
-			D1,6							R	r							
-			d2,6															
-D3,2			D2,6								R	r						
-D0,1			P7	P								R						
-			d0,7															
-D3,3			D0,7	G15						r								
-			d1,7															
-			D1,7							R	r							
-			d2,7															
-D2,2			D2,7								R	r						
-			P15	P								R						
-			d0,15															
-			D0,15	G5						r								
-			d1,15															
-			D1,15							R	r							
-			d2,15															
-D0,1			D2,15								R	r						
-D4,2												R						
-D4,1			P5	P														
-			d0,5															
-			D0,5	G17						r								
-			d1,5															
-D4,2			D1,5							R	r							
-			d2,5															
-			D2,5								R	r						
-D3,1												R						
-D4,2			P17	P														
-			d0,17															
-			D0,17	G11						r								
-			d1,17															
-D1,3			D1,17							R	r							
-			d2,17															
-			D2,17								R	r						
-D3,3												R						
-D3,3			P11	P														
-			d0,11															
-			D0,11	G13						r								
-			d1,11															
-D3,1			D1,11							R	r							
-			d2,11															
-			D2,11								R	r						
-			P13	P								R						
-			d0,13															
-D1,1			D0,13	G11						r								
-			d1,13															
-			D1,13							R	r							
-			d2,13															
-D1,1			D2,13								R	r						
-D0,3			P11	P								R						
-			d0,11															
-D0,1			D0,11	G7						r								
-			d1,11															
-			D1,11							R	r							
-			d2,11															
-D1,3			D2,11								R	r						
-D1,3			P7	P								R						
-			d0,7															
-			D0,7	G10						r								
-			d1,7															
-			D1,7							R	r							
-			d2,7															
-D2,3			D2,7								R	r						
-D1,3			P10	P								R						
-			d0,10															
-			D0,10	G9						r								
-			d1,10															
-			D1,10							R	r							
-			d2,10															
-D1,1			D2,10								R	r						
-D0,1												R						
-D3,1			P9	P														
-			d0,9															
-			D0,9	G16						r								
-			d1,9															
-D1,2			D1,9							R	r							
-			d2,9															
-			D2,9								R	r						
-D0,1			P16	P								R						
-			d0,16															
-D4,1			D0,16	G7						r								
-			d1,16															
-			D1,16							R	r							
-			d2,16															
-D3,2			D2,16								R	r						
-			P7	P								R						
-			d0,7															
-D3,2			D0,7	G8						r								
-			d1,7															
-			D1,7							R	r							
-			d2,7															
-D3,2			D2,7								R	r						
-			P8	P								R						
-			d0,8															
-			D0,8	G15						r								
-			d1,8															
-			D1,8							R	r							
-			d2,8															
-D2,2			D2,8								R	r						
-			P15	P								R						
-			d0,15															
-D2,1			D0,15	G7						r								
-			d1,15															
-			D1,15							R	r							
-			d2,15															
-D0,3			D2,15								R	r						
-D0,1			P7	P								R						
-			d0,7															
-			D0,7	G10						r								
-			d1,7															
-			D1,7							R	r							
-			d2,7															
-D3,1			D2,7								R	r						
-D3,3			P10	P								R						
-			d0,10	G12														
-D1,3			D0,10							r								
-			d1,10															
-			D1,10							R	r							
-			d2,10															
-D1,3			D2,10								R	r						
-			P12	P								R						
-			d0,12															
-			D0,12	G9						r								
-			d1,12															
-D0,1			D1,12							R	r							
-			d2,12															
-			D2,12								R	r						
 D3,1			P9	P								R						
 			d0,9															
-D3,3			D0,9	G7						r								
+D4,1			D0,9	G6						r								
 			d1,9															
 			D1,9							R	r							
 			d2,9															
-D3,2			D2,9								R	r						
-			P7	P								R						
-			d0,7															
-D2,2			D0,7	G8						r								
-			d1,7															
-			D1,7							R	r							
-			d2,7															
-D3,2			D2,7								R	r						
-			P8	P								R						
-			d0,8															
-			D0,8	G7						r								
-			d1,8															
-D2,1			D1,8							R	r							
-			d2,8															
-			D2,8								R	r						
-D2,1												R						
-D4,1			P7	P														
-			d0,7															
-D2,2			D0,7	G6						r								
-			d1,7															
-			D1,7							R	r							
-			d2,7															
-D2,2			D2,7								R	r						
+D2,3			D2,9								R	r						
 			P6	P								R						
 			d0,6															
-D0,3			D0,6	G12						r								
+			D0,6	G6						r								
 			d1,6															
-			D1,6							R	r							
+D0,1			D1,6							R	r							
 			d2,6															
-D4,2			D2,6								R	r						
-D4,1			P12	P								R						
-			d0,12															
-			D0,12	G16						r								
-			d1,12															
-D4,1			D1,12							R	r							
-			d2,12															
-			D2,12								R	r						
-D0,1			P16	P								R						
-			d0,16															
-			D0,16	G9						r								
-			d1,16															
-D4,2			D1,16							R	r							
-			d2,16															
-			D2,16								R	r						
-D0,1			P9	P								R						
-			d0,9															
-			D0,9	G8						r								
-			d1,9							R								
-D4,1			D1,9								r							
-			d2,9															
-			D2,9								R	r						
-D0,2												R						
-D2,3			P8	P														
-			d0,8															
-			D0,8	G9						r								
-			d1,8															
-D0,3			D1,8							R	r							
-			d2,8															
-			D2,8								R	r						
-D2,1												R						
-D4,3			P9	P														
-			d0,9															
-D3,1			D0,9	G14						r								
-			d1,9															
-			D1,9							R	r							
-			d2,9															
-D2,1			D2,9								R	r						
-D3,1			P14	P								R						
-			d0,14															
-			D0,14	G12						r								
-			d1,14															
-			D1,14							R	r							
-			d2,14															
-D2,3			D2,14								R	r						
-D2,3			P12	P								R						
-			d0,12															
-D4,2			D0,12	G9						r								
-			d1,12															
-			D1,12							R	r							
-			d2,12															
-D3,1			D2,12								R	r						
-D3,3			P9	P								R						
-			d0,9															
-D4,3			D0,9	G10						r								
-			d1,9															
-			D1,9							R	r							
-			d2,9															
-D4,3			D2,9								R	r						
-			P10	P								R						
-			d0,10															
-D0,1			D0,10	G5						r								
-			d1,10															
-			D1,10							R	r							
-			d2,10															
-D1,2			D2,10								R	r						
-D0,1			P5	P								R						
-			d0,5															
-D4,3			D0,5	G13						r								
-			d1,5															
-			D1,5							R	r							
-			d2,5															
-D2,3			D2,5								R	r						
-D1,2												R						
-D0,1			P13	P														
-			d0,13															
-			D0,13	G8						r								
-			d1,13															
-			D1,13							R	r							
-			d2,13															
-D2,3			D2,13								R	r						
-D1,3			P8	P								R						
-			d0,8															
-			D0,8	G9						r								
-			d1,8															
-D3,2			D1,8							R	r							
-			d2,8															
-			D2,8								R	r						
-			P9	P								R						
-			d0,9															
-D0,2			D0,9	G8						r								
-			d1,9															
-			D1,9							R	r							
-			d2,9															
-D2,1			D2,9								R	r						
-D0,2												R						
-D4,2			P8	P														
-			d0,8															
-			D0,8	G11						r								
-			d1,8															
-			D1,8							R	r							
-			d2,8															
-D3,3			D2,8								R	r						
-D1,1												R						
-D0,1			P11	P														
-			d0,11															
-			D0,11	G13						r								
-			d1,11															
-D0,1			D1,11							R	r							
-			d2,11															
-			D2,11								R	r						
-D3,2			P13	P								R						
-			d0,13															
-D2,1			D0,13	G11						r								
-			d1,13															
-			D1,13							R	r							
-			d2,13															
-D2,3			D2,13								R	r						
-D4,3			P11	P								R						
-			d0,11															
-			D0,11	G12						r								
-			d1,11															
-D2,3			D1,11							R	r							
-			d2,11															
-			D2,11								R	r						
-D3,1												R						
-D0,2			P12	P														
-			d0,12															
-			D0,12	G7						r								
-			d1,12															
-			D1,12							R	r							
-			d2,12															
-D2,1			D2,12								R	r						
-			P7	P								R						
-			d0,7															
-			D0,7	G15						r								
-			d1,7															
-D0,2			D1,7							R	r							
-			d2,7															
-			D2,7								R	r						
-D0,3			P15	P								R						
-			d0,15															
-D1,3			D0,15	G19						r								
-			d1,15															
-			D1,15							R	r							
-			d2,15															
-D4,1			D2,15								R	r						
-			P19	P								R						
-			d0,19															
-			D0,19	G6						r								
-			d1,19															
-D3,3			D1,19							R	r							
-			d2,19															
-			D2,19								R	r						
-D1,2												R						
-D1,2			P6	P														
+			D2,6								R	r						
+D1,3			P6	P								R						
 			d0,6															
-			D0,6	G13						r								
-			d1,6															
-			D1,6							R	r							
-			d2,6															
-D2,2			D2,6								R	r						
-			P13	P								R						
-			d0,13															
-D3,1			D0,13	G16						r								
-			d1,13															
-			D1,13							R	r							
-			d2,13															
-D3,3			D2,13								R	r						
-D1,2			P16	P								R						
-			d0,16															
-D4,2			D0,16	G6						r								
-			d1,16															
-			D1,16							R	r							
-			d2,16															
-D4,2			D2,16								R	r						
-D3,2			P6	P								R						
-			d0,6															
-D2,3			D0,6	G9						r								
+D0,2			D0,6	G9						r								
 			d1,6															
 			D1,6							R	r							
 			d2,6															
 D3,1			D2,6								R	r						
-			P9	P								R						
-			d0,9															
-			D0,9	G12						r								
-			d1,9															
-D1,3			D1,9							R	r							
-			d2,9															
-			D2,9								R	r						
-D2,1			P12	P								R						
-			d0,12															
-			D0,12	G9						r								
-			d1,12															
-D3,3			D1,12							R	r							
-			d2,12															
-			D2,12								R	r						
-D3,2			P9	P								R						
-			d0,9															
-D3,2			D0,9	G10						r								
-			d1,9															
-			D1,9							R	r							
-			d2,9															
-D4,1			D2,9								R	r						
-D4,3			P10	P								R						
-			d0,10															
-			D0,10	G14						r								
-			d1,10															
-D0,2			D1,10							R	r							
-			d2,10															
-			D2,10								R	r						
-D4,3			P14	P								R						
-			d0,14															
-D4,2			D0,14	G11						r								
-			d1,14															
-			D1,14							R	r							
-			d2,14															
-D1,1			D2,14								R	r						
-D4,1			P11	P								R						
-			d0,11															
-D2,1			D0,11	G6						r								
-			d1,11															
-			D1,11							R	r							
-			d2,11															
-D4,3			D2,11								R	r						
-D0,2			P6	P								R						
-			d0,6															
-			D0,6	G12						r								
-			d1,6															
-D1,3			D1,6							R	r							
-			d2,6															
-			D2,6								R	r						
-D2,2												R						
-D1,1			P12	P														
-			d0,12															
-			D0,12	G8						r								
-			d1,12															
-D2,2			D1,12							R	r							
-			d2,12															
-			D2,12								R	r						
-D2,2			P8	P								R						
-			d0,8															
-D1,2			D0,8	G13						r								
-			d1,8															
-			D1,8							R	r							
-			d2,8															
-D1,3			D2,8								R	r						
-D3,1			P13	P								R						
-			d0,13															
-			D0,13	G6						r								
-			d1,13															
-D4,3			D1,13							R	r							
-			d2,13															
-			D2,13								R	r						
-D1,2												R						
-D2,3			P6	P														
-			d0,6															
-			D0,6	G7						r								
-			d1,6															
-D0,2			D1,6							R	r							
-			d2,6															
-			D2,6								R	r						
-D0,2			P7	P								R						
-			d0,7															
-D4,1			D0,7	G15						r								
-			d1,7															
-			D1,7							R	r							
-			d2,7															
-D4,3			D2,7								R	r						
-D3,3												R						
-D4,1			P15	P														
-			d0,15															
-			D0,15	G15						r								
-			d1,15															
-			D1,15							R	r							
-			d2,15															
-D4,3			D2,15								R	r						
-			P15	P								R						
-			d0,15															
-D3,2			D0,15	G7						r								
-			d1,15															
-			D1,15							R	r							
-			d2,15															
-D3,1			D2,15								R	r						
-D1,3			P7	P								R						
-			d0,7															
-D0,3			D0,7	G15						r								
-			d1,7															
-			D1,7							R	r							
-			d2,7															
-D4,2			D2,7								R	r						
-			P15	P								R						
-			d0,15															
-			D0,15	G12						r								
-			d1,15															
-			D1,15							R	r							
-			d2,15															
-D4,2			D2,15								R	r						
-D1,2			P12	P								R						
-			d0,12															
-D0,3			D0,12	G14						r								
-			d1,12															
-			D1,12							R	r							
-			d2,12															
-D2,3			D2,12								R	r						
-			P14	P								R						
-			d0,14															
-			D0,14	G9						r								
-			d1,14															
-D4,3			D1,14							R	r							
-			d2,14															
-			D2,14								R	r						
-D4,1												R						
+D0,2					B10					B2,4		R	T0,105					
+...	...	...	...	...	F	...	...	...	...	...	...	...	...	...	...	...	...	
 D3,3			P9	P														
 			d0,9															
-			D0,9	G10						r								
-			d1,9															
-D2,3			D1,9							R	r							
-			d2,9															
-			D2,9								R	r						
-D3,3												R						
-D0,2			P10	P														
-			d0,10															
-			D0,10	G4						r								
-			d1,10															
-D1,1			D1,10							R	r							
-			d2,10															
-			D2,10								R	r						
-D4,1			P4	P								R						
-			d0,4															
-			D0,4	G11						r								
-			d1,4															
-D0,2			D1,4							R	r							
-			d2,4															
-			D2,4								R	r						
-D3,1			P11	P								R						
-			d0,11															
-			D0,11	G17						r								
-			d1,11															
-D3,1			D1,11							R	r							
-			d2,11															
-			D2,11								R	r						
-D1,1			P17	P								R						
-			d0,17															
-			D0,17	G8						r								
-			d1,17															
-D0,3			D1,17							R	r							
-			d2,17															
-			D2,17								R	r						
-D1,2			P8	P								R						
-			d0,8															
-			D0,8	G16						r								
+			D0,8	G9						r								
 			d1,8															
 			D1,8							R	r							
-D4,3			d2,8								R							
-			D2,8									r						
-D4,1												R						
-D2,1			P16	P														
-			d0,16															
-			D0,16	G10						r								
-			d1,16															
-D1,1			D1,16							R	r							
-			d2,16															
-			D2,16								R	r						
-D1,2												R						
-D0,2			P10	P														
-			d0,10															
-			D0,10	G9						r								
-			d1,10															
-D2,1			D1,10							R	r							
-			d2,10															
-			D2,10								R	r						
-			P9	P								R						
+			d2,8															
+D0,3			D2,8								R	r						
+D3,3			P9	P								R						
 			d0,9															
-D4,2			D0,9	G10						r								
+			D0,9	G7						r								
 			d1,9															
 			D1,9							R	r							
 			d2,9															
-D1,1			D2,9								R	r						
-			P10	P								R						
-			d0,10															
-			D0,10	G11						r								
-			d1,10															
-D0,1			D1,10							R	r							
-			d2,10															
-			D2,10								R	r						
+D1,2			D2,9								R	r						
+			P7	P								R						
+			d0,7															
+D0,3			D0,7	G7						r								
+			d1,7															
+			D1,7							R	r							
+			d2,7															
+D4,1			D2,7								R	r						
+			P7	P								R						
+			d0,7															
+D4,1			D0,7	G6						r								
+			d1,7															
+			D1,7							R	r							
+			d2,7															
+D0,2			D2,7								R	r						
+			P6	P								R						
+			d0,6															
+			D0,6	G11						r								
+			d1,6															
+			D1,6							R	r							
+			d2,6															
+D4,3			D2,6								R	r						
 			P11	P								R						
 			d0,11															
-D2,1			D0,11	G15						r								
+D1,2			D0,11	G3						r								
 			d1,11															
 			D1,11							R	r							
 			d2,11															
-D3,3			D2,11								R	r						
-D3,1			P15	P								R						
-			d0,15															
-			D0,15	G9						r								
-			d1,15															
-D1,3			D1,15							R	r							
-			d2,15															
-			D2,15								R	r						
-D2,1												R						
-D0,2			P9	P														
+D0,3			D2,11								R	r						
+			P3	P								R						
+			d0,3															
+			D0,3	G18						r								
+			d1,3															
+			D1,3							R	r							
+D3,1			d2,3								R							
+			D2,3									r						
+D2,3			P18	P								R						
+			d0,18															
+			D0,18	G9						r								
+			d1,18															
+D4,1			D1,18							R	r							
+			d2,18															
+			D2,18								R	r						
+D4,3			P9	P								R						
 			d0,9															
-			D0,9	G8						r								
+			D0,9	G11						r								
 			d1,9															
-D1,2			D1,9							R	r							
+D4,3			D1,9							R	r							
 			d2,9															
 			D2,9								R	r						
-			P8	P								R						
-			d0,8															
-D0,2			D0,8	G6						r								
-			d1,8															
-			D1,8							R	r							
-			d2,8															
-D1,1			D2,8								R	r						
-D1,1			P6	P								R						
-			d0,6															
-D4,2			D0,6	G9						r								
-			d1,6															
-			D1,6							R	r							
-			d2,6															
-D0,3			D2,6								R	r						
-D0,2			P9	P								R						
-			d0,9															
-D1,3			D0,9	G13						r								
-			d1,9															
-			D1,9							R	r							
-			d2,9															
-D4,2			D2,9								R	r						
-			P13	P								R						
-			d0,13															
-			D0,13	G6						r								
-			d1,13															
-			D1,13							R	r							
-			d2,13															
-D2,1			D2,13								R	r						
-			P6	P								R						
-			d0,6															
-D0,3			D0,6	G5						r								
-			d1,6															
-			D1,6							R	r							
-			d2,6															
-D1,1			D2,6								R	r						
-D3,3			P5	P								R						
-			d0,5															
-D1,2			D0,5	G9						r								
-			d1,5															
-			D1,5							R	r							
-			d2,5															
-D2,2			D2,5								R	r						
-D4,2			P9	P								R						
-			d0,9															
-			D0,9	G14						r								
-			d1,9															
-			D1,9							R	r							
-			d2,9															
-D4,1			D2,9								R	r						
-			P14	P								R						
-			d0,14															
-D4,2			D0,14	G5						r								
-			d1,14															
-			D1,14							R	r							
-			d2,14															
-D1,1			D2,14								R	r						
 D4,3												R						
-D4,2			P5	P														
-			d0,5															
-			D0,5	G8						r								
-			d1,5															
-			D1,5							R	r							
-			d2,5															
-D3,1			D2,5								R	r						
-D4,3			P8	P								R						
-			d0,8															
-			D0,8	G12						r								
-			d1,8															
-D1,1			D1,8							R	r							
-			d2,8															
-			D2,8								R	r						
-D4,3			P12	P								R						
-			d0,12															
-			D0,12	G16						r								
-			d1,12															
-D1,3			D1,12							R	r							
-			d2,12															
-			D2,12								R	r						
-D1,3												R						
-D3,1			P16	P														
-			d0,16															
-			D0,16	G13						r								
-			d1,16															
-D4,1			D1,16							R	r							
-			d2,16															
-			D2,16								R	r						
-D1,3			P13	P								R						
-			d0,13															
-D0,2			D0,13	G5						r								
-			d1,13															
-			D1,13							R	r							
-			d2,13															
-D0,1			D2,13								R	r						
-D0,1			P5	P								R						
-			d0,5															
-D3,1			D0,5	G6						r								
-			d1,5															
-			D1,5							R	r							
-			d2,5															
-D3,1			D2,5								R	r						
-D3,2			P6	P								R						
-			d0,6															
-D3,3			D0,6	G15						r								
-			d1,6															
-D0,2			D1,6							R	r							
-			d2,6															
-			D2,6								R	r						
-D2,1												R						
-D0,1			P15	P														
-			d0,15															
-			D0,15	G10						r								
-			d1,15															
-D3,2			D1,15							R	r							
-			d2,15															
-			D2,15								R	r						
-D1,3			P10	P								R						
-			d0,10															
-D1,3			D0,10	G8						r								
-			d1,10															
-			D1,10							R	r							
-			d2,10															
-D4,3			D2,10								R	r						
-			P8	P								R						
-			d0,8															
-D4,3			D0,8	G13						r								
-			d1,8															
-			D1,8							R	r							
-			d2,8															
-D4,2			D2,8								R	r						
-			P13	P								R						
-			d0,13															
-D1,2			D0,13	G8						r								
-			d1,13															
-			D1,13							R	r							
-			d2,13															
-D1,3			D2,13								R	r						
-			P8	P								R						
-			d0,8															
-D1,3			D0,8	G10						r								
-			d1,8															
-			D1,8							R	r							
-			d2,8															
-D1,2			D2,8								R	r						
-D4,2			P10	P								R						
-			d0,10															
-D0,1			D0,10	G5						r								
-			d1,10															
-			D1,10							R	r							
-			d2,10															
-D2,2			D2,10								R	r						
-			P5	P								R						
-			d0,5															
-			D0,5	G10						r								
-			d1,5															
-D1,1			D1,5							R	r							
-			d2,5															
-			D2,5								R	r						
-D0,1			P10	P								R						
-			d0,10															
-D0,3			D0,10	G5						r								
-			d1,10															
-			D1,10							R	r							
-			d2,10															
-D3,1			D2,10								R	r						
-			P5	P								R						
-			d0,5															
-			D0,5	G13						r								
-			d1,5															
-D2,2			D1,5							R	r							
-			d2,5															
-			D2,5								R	r						
-D0,3												R						
-D0,2			P13	P											T0,105			
-			d0,13															
-			D0,13	G9						r								
-			d1,13															
-D3,3			D1,13							R	r							
-					B10					B2,4								
-...	...	...	...	...	F	...	...	...	...	...	...	...	...	...	...	...	...	
-			d2,13															
-			D2,13								R	r						
-D0,3												R						
+D3,3			P11	P												T3,105		
+			d0,11															
+			D0,11	G6						r								
+			d1,11															
+D2,2			D1,11							R	r							
+								B10		B1,4								
+...	...	...	...	...	...	...	...	F	...	...	...	...	...	...	...	...	...	
+			d2,11															
+			D2,11								R	r						
+D4,2												R						
 ...	...	...	F	...	...	...	...	...	...	...	...	...	...	...	...	...	...	
 ...	...	...	...	F	...	...	...	...	...	...	...	...	...	...	...	...	...	
 ...	...	...	...	...	...	...	...	...	...	F	...	...	...	...	...	...	...	
-D1,2																		
+D2,1																		
 ...	...	...	...	...	...	...	...	...	...	...	F	...	...	...	...	...	...	
 ...	...	...	...	...	...	...	...	...	...	...	...	F	...	...	...	...	...	
+D3,3																		
 ...	...	F	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	
-D3,1																		
-...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	F	...	
-...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	F	
-D3,1																		
-...	...	...	...	...	...	...	...	...	...	...	...	...	F	...	...	...	...	
 ...	...	...	...	...	...	...	...	...	...	...	...	...	...	F	...	...	...	
-D1,1																		
+D2,2																		
+...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	F	
 ...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	F	...	...	
+...	...	...	...	...	...	...	...	...	...	...	...	...	F	...	...	...	...	
+D0,3																		
+...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	F	...	
 ...	F	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	
-D4,1																		
+D0,1																		
 F	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	
 ***********************

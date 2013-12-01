@@ -24,9 +24,10 @@ void uMain::main()
 		if(argc >= 3)
 		{
 			seed = atoi(argv[2]);
-			if(argc >= 4)
+			if(argc >= 4 || seed <= 0)
 			{
 				//Error 
+				cout <<"Usage: ./soda [ config-file [ random-seed (> 0) ] ]"<<endl;
 				return;
 			}
 		}
