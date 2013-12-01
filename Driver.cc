@@ -30,6 +30,7 @@ void uMain::main()
 			}
 		}
 	}
+	mprng.seed(seed);
 	ConfigParms configParms;
 	processConfigFile(configName, configParms);
 	//Initialize all the necessary classes
