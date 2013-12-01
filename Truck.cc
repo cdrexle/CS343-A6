@@ -9,13 +9,25 @@ extern MPRNG mprng;
 
 void Truck::main()
 {
+	prt->print(Printer::Truck, 'S');
 	cargo = new unsigned int[4];
 	VendingMachine** machineList = nameServer->getMachineList();
 	while(true) {
 		yield(mprng(9) + 1); // get coffee
 		bool closingDown = plant->getShipment(cargo);
 		if (closingDown) break;
+
+		int totalSoda = 0;
+		for(int i = 0; i < 4; i++)
+		{
+			totalSoda += cargo[i];
+		}
+		prt->print(Printer::Truck, 'P', totalSoda);
+
 		for (unsigned int i = 0; i < numVendingMachines; i++) {
+
+			prt->print(Printer::Truck, 'd', i, totalSoda);
+
 			unsigned int* inventory = machineList[i]->inventory();
 			for (unsigned int j = 0; j < 4; j++) {
 				unsigned int amountToStock = maxStockPerFlavour - inventory[j];
@@ -26,6 +38,7 @@ void Truck::main()
 			machineList[i]->restocked();
 		}
 	}
+	prt->print(Printer::Truck, 'F');
 }
 
 Truck::Truck( Printer &prt, NameServer &nameServer, BottlingPlant &plant,

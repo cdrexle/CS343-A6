@@ -10,6 +10,7 @@ _Task WATCardOffice {
 	struct Args {
         int studentId;
         int addAmount;
+        bool closing;
         WATCard* watCard;
     };
     struct Job {                           // marshalled arguments and return future
@@ -24,17 +25,21 @@ _Task WATCardOffice {
     int newJobAddAmount;
     Job *newJob;
     WATCard *newJobWATCard;
+    uCondition noJobs;
+    bool closing;
     _Task Courier {
+            int id;
             Bank *bankPtr;
             WATCardOffice *officePtr;
+            Printer *printer;
             void main();
         public:
-            Courier(WATCardOffice &watCardOffice, Bank &bank);
+            Courier(int id, WATCardOffice &watCardOffice, Bank &bank, Printer &printer);
+            ~Courier();
 
     };                 // communicates with bank
     std::vector <Courier *> courierList;    //List of couriers
     std::vector <Job *> jobList;            //List of available jobs for couriers
-    uCondition jobQueue;
     void main();
   public:
     _Event Lost {};                        // uC++ exception type, like "struct"

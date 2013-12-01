@@ -4,6 +4,7 @@
 #include "WATCardOffice.h"
 #include "VendingMachine.h"
 #include "MPRNG.h"
+#include <iostream>
 
 extern MPRNG mprng;
 
@@ -14,56 +15,57 @@ void Student::main()
 	int favoriteFlavour = mprng(3);
 	//Determines the number of purchases within [1, maxPurchase]
 	int purchaseNum = mprng(numPurchase - 1) + 1;
+	printer->print(Printer::Student, Id, 'S', favoriteFlavour, purchaseNum);
+	WATCard::FWATCard newWATCard;
+	bool newCardCreated = false;
+	//Create WAT card		
+	newWATCard = office->create(Id, 5);
+
+
 	while(currentNumPurchase < purchaseNum)
 	{
-		WATCard::FWATCard newWATCard;
-		bool newCardCreated = false;
-		while(!newCardCreated)
-		{
-			//Create WAT card
-			try
-			{
-				newCardCreated = true;
-				newWATCard = office->create(Id, 5);
-			}
-			catch(WATCardOffice::Lost &lost)
-			{
-				newCardCreated = false;
-			}
-		}
 		//Get vending machine
 		VendingMachine *tempVendingMachine = server->getMachine(Id);
+
+		printer->print(Printer::Student, Id, 'V', tempVendingMachine->getId());
 		int purchaseStatus = -1;
 		while(purchaseStatus != VendingMachine::BUY)
 		{
 			yield(mprng(9) + 1);
-			//Attempt to purchase soda
-			purchaseStatus = tempVendingMachine->buy((VendingMachine::Flavours)favoriteFlavour, *newWATCard());		
+			bool lostCard = true;
+			while(lostCard)
+			{
+				lostCard = false;
+				try
+				{
+					//Attempt to purchase soda
+					purchaseStatus = tempVendingMachine->buy((VendingMachine::Flavours)favoriteFlavour, *newWATCard());		
+				}
+				catch(WATCardOffice::Lost &lost)
+				{
+					lostCard = true;
+					printer->print(Printer::Student, Id, 'L');
+					newWATCard = office->create(Id, 5);
+				}
+			}
 			//If the WAT card has insufficient funds, call transfer funds
 			if(purchaseStatus == VendingMachine::FUNDS)
 			{
-				//Try and catch the Lost exception during the transfer 
-				try
+				lostCard = true;
+				while(lostCard)
 				{
-					office->transfer(Id, tempVendingMachine->cost() + 5, newWATCard());
-				}
-				//If the WATCard is lost during transfer, create a new one
-				catch(WATCardOffice::Lost &lost)
-				{
-					newCardCreated = false;
-					//Need to take into account that the newly created card can still be lost
-					while(!newCardCreated)
+					lostCard = false;
+					//Try and catch the Lost exception during the transfer 
+					try
 					{
-						//Create WAT card
-						try
-						{
-							newCardCreated = true;
-							WATCard::FWATCard newWATCard = office->create(Id, 5);
-						}
-						catch(WATCardOffice::Lost &lost)
-						{
-							newCardCreated = false;
-						}
+						office->transfer(Id, tempVendingMachine->cost() + 5, newWATCard());
+					}
+					//If the WATCard is lost during transfer, create a new one
+					catch(WATCardOffice::Lost &lost)
+					{
+						lostCard = true;
+						printer->print(Printer::Student, Id, 'L');
+						newWATCard = office->create(Id, 5);
 					}
 				}
 			}
@@ -73,9 +75,12 @@ void Student::main()
 				tempVendingMachine = server->getMachine(Id);
 			}
 		}
+		printer->print(Printer::Student, Id, 'B', newWATCard()->getBalance());
 		//If the soda is bought successfully, increment the counter
 		currentNumPurchase++;
 	}
+	delete newWATCard;
+	printer->print(Printer::Student, Id, 'F');
 }
 
 Student::Student( Printer &prt, NameServer &nameServer, WATCardOffice &cardOffice, unsigned int id, unsigned int maxPurchases )

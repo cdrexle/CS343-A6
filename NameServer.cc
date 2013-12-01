@@ -2,11 +2,13 @@
 #include "Printer.h"
 #include "VendingMachine.h"
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
 void NameServer::main()
 {
+	prt->print(Printer::NameServer, 'S');
 	vendingMachineList = new VendingMachine*[numVendingMachines];
 	unsigned int vid = 0;
 	for (unsigned int i = 0; i < numStudents; i++) {
@@ -14,19 +16,25 @@ void NameServer::main()
 		vid = (vid + 1) % numVendingMachines;
 	}
 	while(true) {
-		_Accept(~NameServer) {}
+		_Accept(~NameServer) 
+		{
+			break;
+		}
 		or _When(numMachinesRegistered < numVendingMachines) _Accept(VMregister) {
 			numMachinesRegistered++;
 		}
 		or _When (numMachinesRegistered == numVendingMachines) _Accept(getMachine, getMachineList) {}
 	}
+	prt->print(Printer::NameServer, 'F');
 }
 
 NameServer::NameServer( Printer &prt, unsigned int numVendingMachines, unsigned int numStudents ) :
 	prt(&prt),
 	numVendingMachines(numVendingMachines),
 	numStudents(numStudents)
-{}
+{
+	numMachinesRegistered = 0;
+}
 
 NameServer::~NameServer() {
 	delete[] vendingMachineList;
@@ -34,13 +42,18 @@ NameServer::~NameServer() {
 
 void NameServer::VMregister( VendingMachine *vendingmachine )
 {
+	prt->print(Printer::NameServer, 'R', vendingmachine->getId());
 	vendingMachineList[numMachinesRegistered] = vendingmachine;
 }
 
 VendingMachine *NameServer::getMachine( unsigned int id )
 {
+
 	unsigned int vid = studentVendingMachines[id];
 	studentVendingMachines[id] = (studentVendingMachines[id] + 1) % numVendingMachines;
+
+	prt->print(Printer::NameServer, 'N', id, vid);
+
 	return vendingMachineList[vid];
 }
 

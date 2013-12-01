@@ -7,6 +7,7 @@ extern MPRNG mprng;
 
 void Parent::main()
 {
+	prt->print(Printer::Parent, 'S');
 	while(true) {
 		_Accept(~Parent) {
 			break;
@@ -17,9 +18,12 @@ void Parent::main()
 			//Determines which student to give it to: [0, numStudents - 1]
 			unsigned int student = mprng(numStudents - 1);
 			yield(parentalDelay);
+			prt->print(Printer::Parent, 'D', student, amount);
 			bank->deposit(student, amount);
 		}
 	}
+
+	prt->print(Printer::Parent, 'F');
 }
 
 Parent::Parent( Printer &prt, Bank &bank, unsigned int numStudents, unsigned int parentalDelay ) :

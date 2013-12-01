@@ -21,11 +21,11 @@ _Task VendingMachine {
   private:
   	unsigned int* stock;
   	Printer* prt;
-	NameServer* nameServer;
-	unsigned int id;
-	unsigned int sodaCost;
-	unsigned int maxStockPerFlavour;
-	bool beingStocked;
+  	NameServer* nameServer;
+  	unsigned int id;
+  	unsigned int sodaCost;
+  	unsigned int maxStockPerFlavour;
+  	bool beingStocked;
 };
 
 #endif
