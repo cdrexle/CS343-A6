@@ -3,8 +3,6 @@
 #include "Bank.h"
 #include "MPRNG.h"
 
-extern MPRNG mprng;
-
 void Parent::main()
 {
 	prt->print(Printer::Parent, 'S');

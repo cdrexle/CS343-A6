@@ -4,8 +4,6 @@
 #include "Truck.h"
 #include "MPRNG.h"
 
-extern MPRNG mprng;
-
 void BottlingPlant::main()
 {
 	prt->print(Printer::BottlingPlant, 'S');

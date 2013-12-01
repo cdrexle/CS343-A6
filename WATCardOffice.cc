@@ -5,8 +5,6 @@
 #include "MPRNG.h"
 #include <iostream>
 
-extern MPRNG mprng;
-
 void WATCardOffice::main()
 {
 	printer->print(Printer::WATCardOffice, 'S');

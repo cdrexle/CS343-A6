@@ -2,12 +2,12 @@
 
 WATCard::WATCard( const WATCard & )
 {
-	//TODO: FIgure out if we need to do anything here
+	
 }
           
 WATCard& WATCard::operator=( const WATCard & )
 {
-	//TODO: FIgure out if we need to do anything here
+	
 }
 
 WATCard::WATCard() : balance(0) {}

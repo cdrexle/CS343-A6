@@ -6,8 +6,6 @@
 #include "MPRNG.h"
 #include <iostream>
 
-extern MPRNG mprng;
-
 void Student::main()
 {
 	int currentNumPurchase = 0;

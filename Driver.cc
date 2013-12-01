@@ -1,4 +1,4 @@
-#include "mprng.h"
+#include "MPRNG.h"
 #include "config.h"
 #include "Printer.h"
 #include "Bank.h"
@@ -13,6 +13,9 @@
 #include <string>
 
 using namespace std;
+
+// global variable
+MPRNG mprng;
 
 void uMain::main()
 {

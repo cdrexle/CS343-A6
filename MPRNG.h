@@ -12,3 +12,5 @@ _Monitor MPRNG {
 };
 
 #endif // __MPRNG_H__
+
+extern MPRNG mprng;

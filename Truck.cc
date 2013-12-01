@@ -5,8 +5,6 @@
 #include "VendingMachine.h"
 #include "MPRNG.h"
 
-extern MPRNG mprng; 
-
 void Truck::main()
 {
 	prt->print(Printer::Truck, 'S');
