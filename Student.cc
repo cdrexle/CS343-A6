@@ -19,16 +19,23 @@ void Student::main()
 	WATCard::FWATCard newWATCard;
 	//Create WAT card		
 	newWATCard = office->create(Id, 5);
+	//Go to the assigned vending machine
 	VendingMachine *tempVendingMachine = server->getMachine(Id);
+	
+	//Loop until the student has bought the number of sodas required
 	while(currentNumPurchase < purchaseNum)
 	{
 		//Get vending machine
 		printer->print(Printer::Student, Id, 'V', tempVendingMachine->getId());
 		int purchaseStatus = -1;
+
+		//Attempt to buy until a purchase is successful
 		while(purchaseStatus != VendingMachine::BUY)
 		{
 			yield(mprng(9) + 1);
 			bool lostCard = true;
+			//Before each purchase attempt, explicit check whether the card the student is currently
+			//holding is already lost, and only exit the loop if the card is successfully created
 			while(lostCard)
 			{
 				lostCard = false;
@@ -37,6 +44,7 @@ void Student::main()
 				{
 					newWATCard()->getBalance();
 				} 
+				//If the card is lost, create a new card
 				catch(WATCardOffice::Lost &lost)
 				{
 					lostCard = true;
@@ -74,6 +82,7 @@ void Student::main()
 		//If the soda is bought successfully, increment the counter
 		currentNumPurchase++;
 	}
+	//Before termination, delete the WAT card the student is holding
 	delete newWATCard;
 	printer->print(Printer::Student, Id, 'F');
 }

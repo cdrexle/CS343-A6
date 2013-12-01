@@ -1,0 +1,9 @@
+#!/bin/bash
+./soda NonExistentFile > out1
+./soda input 10 input > out2
+./soda > out3
+./soda config1.config 100 > out4
+./soda config2.config 150 > out5
+./soda config3.config 50 > out6
+./soda config4.config 25 > out7
+./soda config5.config > out8

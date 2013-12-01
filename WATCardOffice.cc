@@ -21,6 +21,7 @@ void WATCardOffice::main()
 		_Accept(~WATCardOffice)
 		{
 			closing = true;
+			//When the office is closing, unblock all Couriers that are waiting for jobs
 			while(!noJobs.empty())
 			{
 				noJobs.signalBlock();
@@ -64,6 +65,7 @@ WATCardOffice::WATCardOffice( Printer &prt, Bank &bank, unsigned int numCouriers
 	printer = &prt;
 	bankPtr = &bank;
 }
+
 WATCard::FWATCard WATCardOffice::create( unsigned int sid, unsigned int amount )
 {
 	printer->print(Printer::WATCardOffice, 'C', sid, amount);
@@ -150,6 +152,8 @@ void WATCardOffice::Courier::main()
 	{
 		//Requests a new job
 		Job *newJob = officePtr->requestWork();
+
+		//If the job requested is termination, exit the loop and terminate
 		if(newJob->args.closing)
 		{
 			delete newJob;
@@ -166,7 +170,7 @@ void WATCardOffice::Courier::main()
 		//In case where courier loses the WATCard
 		if(mprng()%6 == 0)
 		{
-			
+			//Insert exception into future WAT card and delete the current WAT card
 			newJob->result.exception(new WATCardOffice::Lost);
 			delete newJob->args.watCard;
 		}

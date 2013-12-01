@@ -7,37 +7,47 @@ _Monitor Bank;
 #include <vector>
 
 _Task WATCardOffice {
+    //---------------------------------------------------------------------------
+    //Definition of Args
+    //---------------------------------------------------------------------------
 	struct Args {
-        int studentId;
-        int addAmount;
-        bool closing;
-        WATCard* watCard;
+        int studentId;                              //The ID of the student making the request
+        int addAmount;                              //The amount of money to transfer
+        bool closing;                               //Indicate whether this job is to terminate the Courier
+        WATCard* watCard;                           //Pointer to the WAT card that will be delivered
     };
-    struct Job {                           // marshalled arguments and return future
-        Args args;                         
+    //---------------------------------------------------------------------------
+    //Definition of Job
+    //---------------------------------------------------------------------------
+    struct Job {                          
+        Args args;                                  //Arguments fields for the job 
         WATCard::FWATCard result;                   // return future
         Job( Args args ) : args( args ) {}
     };
-    Printer *printer;
-    Bank *bankPtr;
-    int courierNum;                     //Total number of couriers
-    int newJobSid;
-    int newJobAddAmount;
-    Job *newJob;
-    WATCard *newJobWATCard;
-    uCondition noJobs;
-    bool closing;
-    _Task Courier {
-            int id;
-            Bank *bankPtr;
-            WATCardOffice *officePtr;
-            Printer *printer;
+    
+    //---------------------------------------------------------------------------
+    //Definition of Courier Task
+    //---------------------------------------------------------------------------
+    _Task Courier { 
+            int id;                         //ID of Courier
+            Bank *bankPtr;                  //Pointer to the bank
+            WATCardOffice *officePtr;       //Pointer to the WATCardOffice
+            Printer *printer;               //Pointer to printer
             void main();
         public:
             Courier(int id, WATCardOffice &watCardOffice, Bank &bank, Printer &printer);
             ~Courier();
 
-    };                 // communicates with bank
+    };              
+    Printer *printer;
+    Bank *bankPtr;
+    int courierNum;                     //Total number of couriers
+    int newJobSid;                      //The student ID for the newly created job
+    int newJobAddAmount;                //The amount of money to transfer for the newly created job
+    Job *newJob;                        //Pointer to a newly created job
+    WATCard *newJobWATCard;             //Pointer to a newly created WAT Card
+    uCondition noJobs;                  //uCondition when there are no jobs queued up
+    bool closing;                       //Indicate that the office is closing
     std::vector <Courier *> courierList;    //List of couriers
     std::vector <Job *> jobList;            //List of available jobs for couriers
     void main();
@@ -45,9 +55,7 @@ _Task WATCardOffice {
     _Event Lost {};                        // uC++ exception type, like "struct"
     WATCardOffice( Printer &prt, Bank &bank, unsigned int numCouriers );
     ~WATCardOffice();
-
-    //TODO: This is needed in order to compile, is this correct?
-    WATCard::FWATCard create( unsigned int sid, unsigned int amount );
+    WATCard::FWATCard create( unsigned int sid, unsigned int amount );         
     WATCard::FWATCard transfer( unsigned int sid, unsigned int amount, WATCard *card );
     Job *requestWork();
 };
