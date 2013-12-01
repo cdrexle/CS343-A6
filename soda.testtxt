@@ -1,0 +1,743 @@
+Test Document
+
+Output explanation
+
+1. The program takes in a config file name and a seed, then the program will parse the config file to set the 
+necessary variables.
+2. The program then initializes the monitors and tasks, which will begin execution immediately.
+3. The tasks will continue to execute and interact with each other and output their statuses
+4. After all the tasks have finished executing, the driver deletes them and terminates
+
+Script
+1 #!/bin/bash
+2 ./soda NonExistentFile > out1
+3 ./soda input 10 input > out2
+4 ./soda > out3
+5 ./soda config1.config 100 > out4
+6 ./soda config2.config 150 > out5
+7 ./soda config3.config 50 > out6
+8 ./soda config4.config 25 > out7
+9 ./soda config5.config > out8
+
+Test 1 - 2
+---------------------------------------------------------------------------------------------------------------------
+Line#: 1 - 4
+
+Config File: None
+
+Key Point Test: Error handling
+
+Analysis: When a file that doesn't exist is passed in or when the number of arguments given is more than 2, the
+program prints and error message and terminates. This is correct behaviour.
+
+---------------------------------------------------------------------------------------------------------------------
+
+Test 3
+---------------------------------------------------------------------------------------------------------------------
+Line#: 5 - 110
+
+Config File: Default
+
+Config File Parameters:
+SodaCost                2  
+NumStudents             2  
+MaxPurchases            8  
+NumVendingMachines      3 
+MaxStockPerFlavour      5 
+MaxShippedPerFlavour    3 
+TimeBetweenShipments    3 
+ParentalDelay           2  
+NumCouriers             1 
+
+Key Point Test: Testing default parameters and random seed
+
+Analysis: From the output, it shows the program initializes the correct number of tasks. Line 12-14 shows the
+WATCardOffice receive 2 creation requests, this is the initial card creation from the 2 students. After the office
+rendezvous the jobs and prints W, the courier begins the tranfer. After the transfers are complete, the student can
+purchase the soda. At the same line, the corresponding vending machine prints the purchase state and the number of 
+soda left is decremented by 1. Since student 1 starts with 2 purchases, student 1 purchases 2 soda and terminates.
+In the end all the tasks print 'F' and terminate correctly.
+---------------------------------------------------------------------------------------------------------------------
+
+Test 4
+---------------------------------------------------------------------------------------------------------------------
+Line#: 110 - 219	
+
+Config File: config1.config
+
+Config File Parameters:
+SodaCost                10  
+NumStudents             5  
+MaxPurchases            10  
+NumVendingMachines      3 
+MaxStockPerFlavour      5 
+MaxShippedPerFlavour    5 
+TimeBetweenShipments    5 
+ParentalDelay           10  
+NumCouriers             5 
+
+Key Point Test: Testing a different set of parameters with larger values
+
+Analysis: From the output, it shows that the students have to wait a longer time before being able to purchase. This
+is because due to the high cost of the soda and a larger number couriers, multiple transfer are required to purchase
+a soda. The time is further lengthen because the courier must wait for the parent to deposit money into the bank. 
+This is correct behaviour. 
+---------------------------------------------------------------------------------------------------------------------
+
+Test 5
+---------------------------------------------------------------------------------------------------------------------
+Line#: 219 - 317
+
+Config File: config2.config
+
+Config File Parameters:
+SodaCost                100  
+NumStudents             1  
+MaxPurchases            10  
+NumVendingMachines      1 
+MaxStockPerFlavour      10 
+MaxShippedPerFlavour    5 
+TimeBetweenShipments    5 
+ParentalDelay           10  
+NumCouriers             6 
+
+Key Point Test: Testing lost card handling and courier functionalities
+
+Analysis: Since there is only 1 student and a very high soda cost, the couriers must take turns withdrawing money
+from the bank, which has a high chance of losing the card. At line 237 the card is lost, and the office immediately 
+prints a card creation request. Then at line 251, the new card is lost again, which is handled by another creation
+request. This is correct behaviour.
+---------------------------------------------------------------------------------------------------------------------
+
+Test 6
+---------------------------------------------------------------------------------------------------------------------
+Line#:
+
+Config File: config3.config
+
+Config File Parameters: 317 - 420
+SodaCost                100  
+NumStudents             5  
+MaxPurchases            1  
+NumVendingMachines      3 
+MaxStockPerFlavour      5 
+MaxShippedPerFlavour    5 
+TimeBetweenShipments    5 
+ParentalDelay           5  
+NumCouriers             5 
+
+Key Point Test: Testing courier functionalities and student waiting for transfer
+
+Analysis: The output behaviour is similar to that of test 4 and 5. Due to the high soda cost, the students must wait
+for the courier to transfer all the money, while the courier must wait for the parent to deposit the money into the 
+bank.
+---------------------------------------------------------------------------------------------------------------------
+
+Test 7
+---------------------------------------------------------------------------------------------------------------------
+Line #: 420 - 478
+
+Config File: config4.config
+
+Config File Parameters:
+SodaCost                5 
+NumStudents             4  
+MaxPurchases            20  
+NumVendingMachines      3 
+MaxStockPerFlavour      1 
+MaxShippedPerFlavour    5 
+TimeBetweenShipments    5 
+ParentalDelay           10  
+NumCouriers             3 
+
+Key Point Test: Testing truck and vending machine interactions
+
+Analysis: Line 454 - 467 shows that since the students don't have enough money to buy soda, the truck will simply attempt to
+reload the vending machine then discard all the soda. Line 471 - 475 shows that after the student buys a soda, the truck's 
+cargo is decreased by 1, which shows that a single soda was reloaded into the vending machine. This is correct 
+behaviour since the max number of soda in stock is 1.
+---------------------------------------------------------------------------------------------------------------------
+
+Test 8
+---------------------------------------------------------------------------------------------------------------------
+Line #: 478 - 560
+
+Config File: config5.config
+
+Config File Parameters:
+SodaCost                15  
+NumStudents             8  
+MaxPurchases            10  
+NumVendingMachines      1 
+MaxStockPerFlavour      5 
+MaxShippedPerFlavour    5 
+TimeBetweenShipments    5 
+ParentalDelay           5 
+NumCouriers             5 
+
+Key Point Test: Testing a single vending machine with multiple students
+
+Analysis: The output shows that the students are all assigned to the single vending machine, then the students take 
+turns to purchase soda. This is correct behaviour. 
+---------------------------------------------------------------------------------------------------------------------
+
+1  	out1:
+2  	Error: could not open input file "NonExistentFile"
+3  	out2:
+4  	Usage: ./soda [ config-file [ random-seed (> 0) ] ]
+5  	out3:
+6  	Parent	WATOff	Names	Truck	Plant	Stud0	Stud1	Mach0	Mach1	Mach2	Cour0	
+7  	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	
+8  	S	S	S					S2				
+9  			R0		S				S2	S2		
+10 	D0,2	C0,5	R1	S	G3	S1,6	S1,2				S	
+11 	D1,1	C1,5	R2									
+12 	D0,1	W	N0,0			V0					t0,5	
+13 	D1,1		N1,1				V1					
+14 	D0,3										T0,5	
+15 	D0,3	W	N0,1			V1					t1,5	
+16 	D1,1											
+17 	D1,1			P3	P							
+18 				d0,3								
+19 				U0,17								
+20 	D1,2			D0,0	G6			r			T1,5	
+21 				d1,0								
+22 				U1,20								
+23 	D0,2			D1,0				R	r			
+24 				d2,0								
+25 				U2,20								
+26 	D1,3		N1,2	D2,0			V2		R	r		
+27 	D0,3		N0,2			V2				R		
+28 	D0,2		N0,0			V0						
+29 	D1,2											
+30 	D1,2			P6	P							
+31 				d0,6								
+32 				U0,11								
+33 	D0,2		N1,0	D0,0	G4		V0	r				
+34 				d1,0								
+35 				U1,20								
+36 	D0,3			D1,0				R	r			
+37 				d2,0		B3		B1,1				
+38 				U2,20								
+39 	D0,3			D2,0					R	r		
+40 	D0,2									R		
+41 	D1,3						B3	B1,0				
+42 	D0,2			P4	P							
+43 				d0,4								
+44 				U0,9								
+45 	D1,2			D0,0	G9			r				
+46 				d1,0								
+47 				U1,20								
+48 	D0,1			D1,0				R	r			
+49 				d2,0		B1		B1,2				
+50 				U2,20								
+51 	D0,1			D2,0			B1	B1,1	R	r		
+52 	...	...	...	...	...	...	F	...	...	...	...	
+53 	D0,3	T0,7		P9	P					R		
+54 	D1,3			d0,9	G5							
+55 				U0,5								
+56 		W		D0,3							t0,7	
+57 	D0,3			d1,3				r			T0,7	
+58 				U1,17								
+59 	D0,2			D1,0				R	r			
+60 				d2,0								
+61 				U2,20								
+62 	D1,2			D2,0					R	r		
+63 	D1,2			P5	P					R		
+64 				d0,5								
+65 				U0,3								
+66 	D1,1			D0,3	G8			r				
+67 				d1,3								
+68 				U1,14								
+69 	D1,3			D1,0				R	r			
+70 				d2,0		B6		B1,4				
+71 				U2,20								
+72 	D1,3			D2,0					R	r		
+73 	D0,2					B4		B1,3		R		
+74 	D1,2											
+75 	D1,2			P8	P							
+76 				d0,8								
+77 				U0,1								
+78 	D0,2			D0,4	G5			r				
+79 				d1,4								
+80 				U1,11								
+81 	D1,3			D1,1				R	r			
+82 				d2,1		B2		B1,4				
+83 				U2,19								
+84 	D1,3			D2,0		B0		B1,3				
+85 	...	...	...	...	...	F	...	...	...	...	...	
+86 	D1,2								R	r		
+87 	D1,3									R		
+88 	D1,1											
+89 	D1,3											
+90 	D1,3											
+91 	...	...	...	F	...	...	...	...	...	...	...	
+92 	D0,2											
+93 	...	...	...	...	F	...	...	...	...	...	...	
+94 	D1,3											
+95 	...	...	...	...	...	...	...	F	...	...	...	
+96 	D1,2											
+97 	...	...	...	...	...	...	...	...	F	...	...	
+98 	D1,2											
+99 	...	...	...	...	...	...	...	...	...	F	...	
+100	D0,2											
+101	...	...	F	...	...	...	...	...	...	...	...	
+102	D0,1											
+103	...	...	...	...	...	...	...	...	...	...	F	
+104	D1,1											
+105	...	F	...	...	...	...	...	...	...	...	...	
+106	D0,1											
+107	D0,3											
+108	F	...	...	...	...	...	...	...	...	...	...	
+109	***********************
+110	out4 (Partial):
+111	Parent	WATOff	Names	Truck	Plant	Stud0	Stud1	Stud2	Stud3	Stud4	Mach0	Mach1	Mach2	Cour0	Cour1	Cour2	Cour3	Cour4	
+112	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	
+113	S	S	S								S10								
+114		C0,5	R0		S	S3,5	S0,4	S1,1	S1,2	S0,9		S10	S10	S	S	S	S	S	
+115		C1,5	R1	S	G11														
+116		C2,5	R2																
+117		C3,5	N0,0			V0													
+118	D1,3	C4,5	N1,1				V1												
+119		W	N2,2					V2						t0,5					
+120		W	N3,0						V0						t1,5				
+121		W	N4,1							V1						t2,5			
+122		W															t3,5		
+123	D3,1	W		P11	P													t4,5																		
+124				D0,10	G5						r								
+125				d1,10															
+126	D4,2			D1,5							R	r							
+127				d2,5															
+128				U2,12															
+129				D2,0								R	r						
+130				P5	P								R						
+131				d0,5														
+132				d2,16															
+133				D2,16								R	r						
+134	D1,1			P9	P		B10					B0,4	R						
+135				d0,9															
+136				D0,9	G9		B0				r	B0,3							
+137				d1,9															
+138				U1,1															
+139				d2,12															
+140				D2,12								R	r						
+141	D4,2			P7	P								R					T4,15	
+142				d0,7															
+143				D0,7	G15					B10	r	B0,4							
+144				d1,7															
+145				D1,6							R	r							
+146				d2,6															
+147	D4,1			D2,6								R	r						
+148	D4,2	T4,15		P15	P					B0		B0,4	R						
+149				d0,15															
+150		W		D0,15	G7						r							t4,15	
+151				d1,15															
+152	D1,3			D0,15	G10						r								
+153				d1,15															
+154				D1,15							R	r							
+155				d2,15															
+156				D2,15								R	r						
+157	D0,2			P10	P								R						
+158				d0,10															
+159				D0,10	G11						r								
+160				d1,10															
+161				D1,10							R	r							
+162				d2,10															
+163	D3,2			D2,10								R	r						
+164				P11	P								R						
+165				d0,11															
+166	D4,2			D0,11	G13						r								
+167				d1,11															
+168				D1,11							R	r		T4,15					
+169				d2,11															
+170				D2,11								R	r						
+171										B5		B0,4							
+172	...	...	...	...	...	...	...	...	...	F	...	...	...	...	...	...	...	...	
+173	D4,3			P13	P								R						
+174				d0,13															
+175				D0,13	G9						r								
+176				d1,13															
+177				D1,12							R	r							
+178				d2,12															
+179	D0,2			D2,12								R	r		T0,5				
+180		T0,15											R						
+181		W		P9	P												t0,15		
+182				d0,9															
+183
+184				d1,15															
+185		C0,5		D1,15		L					R	r					T0,15		
+186	D0,3			D0,9	G12						r								
+187				d1,9															
+188				D1,9							R	r				T0,15			
+189				d2,9															
+190				D2,9		B10					B3,4	R	r						
+191				P12	P								R						
+192				d0,12															
+193				D0,11	G12						r								
+194				d1,11															
+195	D0,3			D1,11							R	r							
+196						B0					B3,4								
+197	...	...	...	...	...	F	...	...	...	...	...	...	...	...	...	...	...	...	
+198				d2,11															
+199				D2,11								R	r						
+200													R						
+201	...	...	...	F	...	...	...	...	...	...	...	...	...	...	...	...	...	...	
+202	D1,1																		
+203	...	...	...	...	F	...	...	...	...	...	...	...	...	...	...	...	...	...	
+204	...	...	...	...	...	...	...	...	...	...	F	...	...	...	...	...	...	...	
+205	...	...	...	...	...	...	...	...	...	...	...	F	...	...	...	...	...	...	
+206	...	...	...	...	...	...	...	...	...	...	...	...	F	...	...	...	...	...	
+207	...	...	F	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	
+208	D2,2																		
+209	...	...	...	...	...	...	...	...	...	...	...	...	...	F	...	...	...	...	
+210	...	...	...	...	...	...	...	...	...	...	...	...	...	...	F	...	...	...	
+211	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	F	...	
+212	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	F	
+213	D0,2																		
+214	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	F	...	...	
+215	...	F	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	
+216	D3,3																		
+217	F	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	
+218	***********************
+219	out5(Partial):
+220	Parent	WATOff	Names	Truck	Plant	Stud0	Mach0	Cour0	Cour1	Cour2	Cour3	Cour4	Cour5	
+221	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	
+222	S	S	S				S100							
+223			R0		S									
+224		C0,5	N0,0	S	G9	S0,3		S	S	S	S	S	S	
+225		W		P9	P	V0		t0,5						
+226				d0,9										
+227				U0,31										
+228	D0,1			D0,0	G9		r							
+229				P9	P		R							
+230				d0,9										
+231				U0,22										
+232	D0,2			D0,0	G12		r							
+233				P12	P		R							
+234				d0,12										
+235				U0,10										
+236				D0,0	G15		r							
+237	D0,2	C0,5				L	R	T0,5						
+238		W		P15	P				t0,5					
+239				d0,15										
+240				U0,2										
+241				D0,7	G6		r							
+242	D0,3			P6	P		R							
+243				d0,6										
+244				U0,2										
+245				D0,6	G13		r							
+246	D0,1			P13	P		R							
+247				d0,13										
+248				D0,11	G3		r							
+249				P3	P		R							
+250				d0,3										
+251	D0,2	C0,5		D0,3	G13	L	r		T0,5					
+252		W		P13	P		R			t0,5				
+253				d0,13										
+254				D0,13	G6		r							
+255	D0,2			P6	P		R							
+256				d0,6										
+257				D0,6	G5		r							
+258	D0,1			P5	P		R							
+259				d0,5										
+260				D0,5	G11		r							
+261	D0,2			P11	P		R			T0,5				
+262		T0,105		d0,11	G13									
+263		W		D0,11			r				t0,105			
+264				P12	P	B10	B0,9							
+265				d0,12	G8									
+266				D0,11			r							
+267	D0,2	T0,105					R							
+268		W		P8	P							t0,105		
+269				P7	P		R							
+270				d0,7										
+271				D0,7	G11		r							
+272	D0,2			P11	P		R							
+273				d0,11										
+274				D0,11	G9		r							
+275	D0,3			P9	P		R							
+276				d0,9										
+277				D0,9	G5		r							
+278				P5	P		R							
+279				d0,5										
+280	D0,1			D0,5	G7		r							
+281	D0,3			P7	P		R							
+282				d0,7										
+283				D0,7	G5		r							
+284				P5	P		R							
+285				d0,5										
+286	D0,2			D0,5	G4		r							
+287				P4	P		R							
+288				d0,4										
+289				D0,4	G10		r							
+290	D0,1			P10	P		R							
+291				d0,10										
+292				D0,10	G10		r							
+293	D0,3						R					T0,105										
+294				D0,10	G9		r							
+295				P9	P		R							
+296				d0,9										
+297	D0,3			D0,9	G13		r						T0,105	
+298							R							
+299						B10	B0,9							
+300	...	...	...	...	...	F	...	...	...	...	...	...	...	
+301	...	...	...	F	...	...	...	...	...	...	...	...	...	
+302	...	...	...	...	F	...	...	...	...	...	...	...	...	
+303	D0,2													
+304	...	...	...	...	...	...	F	...	...	...	...	...	...	
+305	...	...	F	...	...	...	...	...	...	...	...	...	...	
+306	...	...	...	...	...	...	...	F	...	...	...	...	...	
+307	...	...	...	...	...	...	...	...	F	...	...	...	...	
+308	D0,2													
+309	...	...	...	...	...	...	...	...	...	F	...	...	...	
+310	...	...	...	...	...	...	...	...	...	...	F	...	...	
+311	...	...	...	...	...	...	...	...	...	...	...	F	...	
+312	...	...	...	...	...	...	...	...	...	...	...	...	F	
+313	...	F	...	...	...	...	...	...	...	...	...	...	...	
+314	D0,3													
+315	F	...	...	...	...	...	...	...	...	...	...	...	...	
+316	***********************
+317	out6 (Partial):
+318	Parent	WATOff	Names	Truck	Plant	Stud0	Stud1	Stud2	Stud3	Stud4	Mach0	Mach1	Mach2	Cour0	Cour1	Cour2	Cour3	Cour4	
+319	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	
+320	S	S	S								S100								
+321		C0,5	R0		S	S2,1	S3,1	S3,1	S1,1	S1,1		S100	S100	S	S	S	S	S	
+322		C1,5	R1	S	G10														
+323	D0,2	C2,5	R2																
+324		C3,5	N0,0			V0													
+325	D4,1	C4,5	N1,1				V1												
+326		W	N2,2					V2						t0,5					
+327		W	N3,0						V0						t1,5				
+328	D1,3	W	N4,1							V1						t2,5			
+329		W															t3,5		
+330	D4,3	W		P10	P													t4,5	
+331				d0,10															
+332				U0,10															
+333				D0,0	G12						r								
+334				d1,0															
+335				U1,20															
+336				D1,0							R	r							
+337				d2,0															
+338				U2,20															
+339	D0,3			D2,0								R	r						
+340		C0,5		P12	P	L							R	T0,5					
+341				d0,12															
+342				U0,3															
+343	D0,2	W		D0,5	G9						r			t0,5					
+344				d1,5															
+345				U1,15															
+346				D1,0							R	r							
+347				d2,0															
+348				U2,20															
+349	D1,2			D2,0								R	r						
+350	D1,2		N1,2	P9	P		V2						R		T1,5				
+351				d0,9															
+352				U0,2															
+353				D0,8	G10						r								
+354				d1,8															
+355				U1,7															
+356	D2,1			D1,0							R	r							
+357				d2,0															
+358				U2,20															
+359				D2,0								R	r						
+360				P10	P								R						
+361				d0,10															
+362	D1,2		N1,0	D0,8	G7		V0				r								
+363				d1,8															
+364				U1,4															
+365				D1,5							R	r							
+366				d2,5															
+367				U2,15																		d0,13															
+368	D1,2			D0,13	G8						r								
+369				d1,13															
+370				D1,13							R	r			T1,105				
+371				d2,13															
+372	D3,2			D2,13			B10				B3,4	R	r						
+373	...	...	...	...	...	...	F	...	...	...	...	...	...	...	...	...	...	...	
+374				P8	P								R						
+375				d0,8															
+376	D4,2			D0,7	G11						r								
+377				d1,7															
+378				D1,7							R	r						T4,105	
+379				d2,7															
+380				D2,7								R	r						
+381										B10		B1,4							
+382	...	...	...	...	...	...	...	...	...	F	...	...	...	...	...	...	...	...	
+383	D4,1												R						
+384	D2,3			P11	P														
+385													R						
+386								B10					B3,4						
+387	...	...	...	...	...	...	...	F	...	...	...	...	...	...	...	...	...	...	
+388	D1,1			P14	P														
+389				d0,14															
+390	D0,1			D0,14	G13						r								
+391				d1,14															
+392				D1,14							R	r		T0,105					
+393				d2,14															
+394				D2,13		B10					B2,4	R	r						
+395	...	...	...	...	...	F	...	...	...	...	...	...	...	...	...	...	...	...	
+396	D4,1			P13	P								R						
+397				d0,13															
+398	D2,3			D1,12							R	r							
+399				d2,12															
+400				D2,12								R	r						
+401	D3,1								B10		B1,4		R				T3,105		
+402	...	...	...	...	...	...	...	...	F	...	...	...	...	...	...	...	...	...	
+403	D2,2			P13	P														
+404				d0,13															
+405				D0,12	G10						r								
+406				d1,12															
+407				D1,12							R	r							
+408				d2,12															
+409	D2,3			D2,12								R	r						
+410	D3,2												R						
+411	...	...	...	F	...	...	...	...	...	...	...	...	...	...	...	...	...	...	
+412	...	...	...	...	F	...	...	...	...	...	...	...	...	...	...	...	...	...	
+413	D1,1																		
+414	...	...	...	...	...	...	...	...	...	...	F	...	...	...	...	...	...	...	
+415	...	...	...	...	...	...	...	...	...	...	...	F	...	...	...	...	...	...	
+416	D0,2																		
+417	...	...	...	...	...	...	...	...	...	...	...	...	F	...	...	...	...	...	
+418	...	...	F	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	
+419	D1,2																		
+420	out7(Partial):
+421	Parent	WATOff	Names	Truck	Plant	Stud0	Stud1	Stud2	Stud3	Mach0	Mach1	Mach2	Cour0	Cour1	Cour2	
+422	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	
+423	S	S	S							S5						
+424			R0		S						S5	S5				
+425		C0,5	R1	S	G11	S3,13	S2,13	S3,15	S1,18				S	S	S	
+426		C1,5	R2													
+427		C2,5	N0,0			V0										
+428		C3,5	N1,1				V1									
+429	D0,3	W	N2,2					V2					t0,5			
+430		W	N3,0						V0					t1,5		
+431		W		P11	P										t2,5	
+432				d0,11												
+433	D2,3			D0,7	G11					r						
+434				d1,7												
+435				D1,3						R	r					
+436				d2,3												
+437				U2,2												
+438				D2,1							R	r				
+439	D2,1			P11	P							R				
+440				d0,11												
+441				D0,11	G11					r						
+442				d1,11												
+443				D1,11						R	r					
+444				d2,11												
+445				U2,1												
+446	D1,3			D2,10							R	r				
+447				P11	P							R				
+448				d0,11												
+449	D3,3			D0,11	G13					r						
+450				d1,11												
+451				D1,11						R	r					
+452				d2,11												
+453				D2,10							R	r				
+454	D1,1			P13	P							R				
+455				d0,13												
+456				D0,13	G11					r						
+457				d1,13												
+458				D1,13						R	r					
+459				d2,13												
+460	D0,1			D2,13							R	r				
+461				P11	P							R				
+462				d0,11												
+463				D0,11	G6					r						
+464				d1,11												
+465	D2,2			D1,11						R	r				T2,5	
+466				d2,11												
+467		W		D2,11							R	r			t3,5	
+468												R				
+469			N2,0					B0				B3,0				
+470	D1,2			P6	P			V0						T1,5		
+471				d0,6												
+472				D0,6	G14					r						
+473				d1,6												
+474		T2,10		D1,6						R	r					
+475				d2,6												
+476		W		D2,5							R	r		t2,10		
+477
+478	out8(Partial):
+479	Parent	WATOff	Names	Truck	Plant	Stud0	Stud1	Stud2	Stud3	Stud4	Stud5	Stud6	Stud7	Mach0	Cour0	Cour1	Cour2	Cour3	Cour4	
+480	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	*******	
+481	S	S	S		S	S1,6	S0,8	S0,9	S1,6	S2,1	S3,4	S3,10	S0,10	S15	S	S	S	S		
+482	D0,1	C0,5	R0	S	G10														S	
+483		C1,5	N0,0			V0														
+484		C2,5	N1,0				V0													
+485	D7,3	C3,5	N2,0					V0												
+486		C4,5	N3,0						V0											
+487	D5,3	C5,5	N4,0							V0										
+488		C6,5	N5,0								V0									
+489		C7,5	N6,0									V0								
+490	D7,1	W	N7,0										V0		t0,5					
+491		W														t1,5				
+492	D7,2	W															t2,5			
+493		W																t3,5		
+494		W		P10	P														t4,5	
+495				d0,10																
+496				U0,10																
+497				D0,10	G6									r					T2,20	
+498														R						
+499	D1,2			P6	P			B15						B0,4						
+500				d0,6																
+501	D4,3			D0,5	G8									r	T1,20					
+502														R						
+503							B15							B0,4						
+504							B0							B0,3						
+505	D1,2			P8	P			B0						B0,2						
+506		T1,20		d0,8	G9															
+507				U0,1																
+508	D4,2	W		D0,6										r					t1,20	
+509				P7	P							B5		B3,4						
+510				d0,7																
+511	D1,2			D0,6	G6									r						
+512				D0,14	G11									r			T7,20			
+513	D0,3													R						
+514				P11	P								B15	B0,4						
+515				d0,11																
+516	D5,1			D0,10	G10									r						
+517														R						
+518	D5,2	T7,20		P10	P								B0	B0,4						
+519				d0,10	G14															
+520		W		D0,9										r			t7,20			
+521	D2,3			D0,14	G8									r						
+522	D6,2	C2,5						L						R	T2,20					
+523		W		P8	P										t2,5					
+524	D1,3	C1,5		D0,9	G15		L							r					T1,20	
+525														R						
+526	D3,3	W		P15	P							B10		B3,4		t1,5				
+527				d0,15																
+528	D0,1			D0,14	G5									r				T0,20		
+529		T6,20												R						
+530	D2,2	W				B15								B1,4					t6,20	
+531						B0								B1,3						
+532	...	...	...	...	...	F	...	...	...	...	...	...	...	...	...	...	...	...	...	
+533	D2,1			P5	P															
+534														R						
+535	D3,2	T7,20											B5	B0,4						
+536		W		P14	P											t7,20				
+537				d0,14																
+538														R						
+539	D7,1			P10	P			B10						B0,4						
+540				d0,10																
+541				D0,9	G13									r						
+542	D2,2	T2,20												R						
+543		W		P13	P												t2,20			
+544				d0,13																
+545														R						
+546												B15		B3,4						
+547	...	...	...	...	...	...	...	...	...	...	...	F	...	...	...	...	...	...	...	
+548	D3,3			P13	P															
+549				d0,13																
+550	D3,1			P15	P								B10	B0,4						
+551				d0,15																
+552	D3,3													R						
+553							B10							B0,4						
+554	...	...	...	...	...	...	F	...	...	...	...	...	...	...	...	...	...	...	...	
+555				P12	P															
+556														R						
+557								B15						B0,4						
+558	...	...	...	...	...	...	...	F	...	...	...	...	...	...	...	...	...	...	...	
+559													B15	B0,4						
+560	...	...	...	...	...	...	...	...	...	...	...	...	F	...	...	...	...	...	...	
