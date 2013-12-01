@@ -9,7 +9,9 @@ extern MPRNG mprng;
 void BottlingPlant::main()
 {
 	prt->print(Printer::BottlingPlant, 'S');
+	// Initialize production run array
 	prod = new unsigned int[4];
+	//Initialize the truck
 	Truck* truck = new Truck(*prt, *nameServer, *this, numVendingMachines, maxStockPerFlavour);
 	while(true) {
 		// Production run
@@ -22,12 +24,14 @@ void BottlingPlant::main()
 		prt->print(Printer::BottlingPlant, 'G', totalProduction);
 
 		yield(timeBetweenShipments);
+		// if closing down, wait for truck to come back
 		_Accept(~BottlingPlant) {
 			closingDown = true;
 			_Accept(getShipment) {}
 			delete truck;
 			break;
 		}
+		// wait for truck
 		or _Accept(getShipment) {}
 	}
 	prt->print(Printer::BottlingPlant, 'F');
@@ -51,8 +55,10 @@ BottlingPlant::~BottlingPlant() {
 
 bool BottlingPlant::getShipment( unsigned int cargo[] )
 {
+	// if closing down, notify truck
 	if (closingDown) return true;
 	prt->print(Printer::BottlingPlant, 'P');
+	// copy cargo into truck
 	for (unsigned int i = 0; i < 4; i++) {
 		cargo[i] = prod[i];
 	}

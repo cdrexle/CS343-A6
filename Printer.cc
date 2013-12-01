@@ -7,6 +7,7 @@
 using namespace std;
 
 string toString(unsigned int num) {
+	// convert integer to string
 	stringstream s;
 	s << num;
 	string w;
@@ -15,6 +16,7 @@ string toString(unsigned int num) {
 }
 
 string stateToString(char val) {
+	// convert char to string
 	stringstream s;
 	s << val;
 	string w;
@@ -23,6 +25,7 @@ string stateToString(char val) {
 }
 
 unsigned int Printer::getId(Printer::Kind kind) {
+	// return the appripriate index inside the buffer for each type
 	switch(kind) {
 		case Printer::Parent:
 			return 0;
@@ -42,6 +45,7 @@ unsigned int Printer::getId(Printer::Kind kind) {
 }
 
 unsigned int Printer::getId(Printer::Kind kind, unsigned int id) {
+	// return the appripriate index inside the buffer for each type
 	switch(kind) {
 		case Printer::Parent:
 		case Printer::WATCardOffice:
@@ -90,6 +94,7 @@ Printer::~Printer() {
 }
 
 void Printer::flushBuffer() {
+	// verify that there is something inside the buffer
 	bool allEmpty = true;
 	for (unsigned int i = 0; i < buffer.size(); i++) {
 		if (buffer[i] != "") {
@@ -98,10 +103,12 @@ void Printer::flushBuffer() {
 		}
 	}
 	if (allEmpty) return;
-
+	
+	// print everything inside the buffer
 	for (unsigned int i = 0; i < buffer.size(); i++) {
 		cout << buffer[i] << "\t";
 	}
+	// clear the buffer
 	for (unsigned int i = 0; i < buffer.size(); i++) {
 		buffer[i] = "";
 	}
@@ -110,11 +117,14 @@ void Printer::flushBuffer() {
 
 void Printer::printPrimitive(unsigned int id, string val) {
 	if (val != "F") {
+		// if overwriting something, flush the buffer
 		if (buffer[id] != "") flushBuffer();
 		buffer[id] = val;
 	}
 	else {
+		// flush buffer
 		flushBuffer();
+		// print special finished line
 		for (unsigned int i = 0; i < buffer.size(); i++) {
 			if (i != id) cout << "...\t";
 			else cout << "F\t";

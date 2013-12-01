@@ -7,23 +7,30 @@
 void VendingMachine::main()
 {
 	prt->print(Printer::Vending, id, 'S', sodaCost);
+	// initialize stock
 	stock = new unsigned int[4];
 	for (unsigned int i = 0; i < 4; i++) {
 		stock[i] = 0;
 	}
+	// register with nameserver
 	nameServer->VMregister(this);
 	while (true) {
 		_Accept(~VendingMachine) {
 			break;
 		}
+		// only accept stocking requests if not currently being stocked
 		or _When(!beingStocked) _Accept(inventory) {
 			prt->print(Printer::Vending, id, 'r');
+			// currently being stocked
 			beingStocked = true;
 		}
+		// only accept stocking completions if currently not being stocked
 		or _When(beingStocked) _Accept(restocked) {
 			prt->print(Printer::Vending, id, 'R');
+			// finished stocking
 			beingStocked = false;
 		}
+		// only accept 
 		or _When(!beingStocked) _Accept(buy) {}
 	}
 	prt->print(Printer::Vending, id, 'F');
